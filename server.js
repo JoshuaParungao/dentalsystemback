@@ -986,7 +986,13 @@ const server = http.createServer((req, res) => {
   // -------------------------------------------------------------
   // STATIC ASSET SERVING
   // -------------------------------------------------------------
-  let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname);
+  let decodedPath = pathname;
+  try {
+    decodedPath = decodeURIComponent(pathname);
+  } catch (e) {
+    decodedPath = pathname;
+  }
+  let filePath = path.join(__dirname, decodedPath === '/' ? 'index.html' : decodedPath);
 
   if (!filePath.startsWith(__dirname)) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
