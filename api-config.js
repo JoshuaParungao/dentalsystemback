@@ -1,12 +1,11 @@
 /**
  * O'Clear Dental Clinic — API & Backend Gateway Configuration
- * Official Domain: ocleardental.com
- * Frontend: Vercel (https://ocleardental.com)
- * Backend: Coolify on Hostinger VPS (https://api.ocleardental.com)
+ * Frontend: Vercel (https://dentalsystemfront.vercel.app)
+ * Backend: Coolify on Hostinger VPS (https://uzndnmatibodoim9edym4azt.187.77.131.56.sslip.io)
  */
 
 // Production Coolify Backend on Hostinger VPS
-window.CLINIC_BACKEND_URL = "https://api.ocleardental.com";
+window.CLINIC_BACKEND_URL = "https://uzndnmatibodoim9edym4azt.187.77.131.56.sslip.io";
 
 function getApiBase() {
   // 1. Manually saved backend URL from Dashboard Settings (if customized)
@@ -20,12 +19,12 @@ function getApiBase() {
     return 'http://localhost:3000';
   }
 
-  // 3. Production Vercel mode -> Coolify VPS Backend (https://api.ocleardental.com)
+  // 3. Production Vercel mode -> Coolify VPS Backend
   if (window.CLINIC_BACKEND_URL && window.CLINIC_BACKEND_URL.trim()) {
     return window.CLINIC_BACKEND_URL.trim().replace(/\/$/, '');
   }
 
-  return 'https://api.ocleardental.com';
+  return 'https://uzndnmatibodoim9edym4azt.187.77.131.56.sslip.io';
 }
 
 window.API_BASE = getApiBase();
