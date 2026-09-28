@@ -1,0 +1,90 @@
+[
+  {
+    "id": "srv-01",
+    "code": "01 / 06",
+    "name": "change",
+    "category": "Orthodontics",
+    "price": 35000,
+    "fee": "₱35,000",
+    "desc": "Personalized orthodontic alignment and brackets tailored to straighten crowded or misaligned teeth.",
+    "duration": "60 mins",
+    "active": true
+  },
+  {
+    "id": "srv-02",
+    "code": "02 / 06",
+    "name": "Clear Aligners",
+    "category": "Orthodontics",
+    "price": 65000,
+    "fee": "₱65,000 (Complete Plan)",
+    "desc": "Discreet, transparent trays custom-planned using digital smile scanning to gently straighten teeth.",
+    "duration": "45 mins",
+    "active": true
+  },
+  {
+    "id": "srv-03",
+    "code": "03 / 06",
+    "name": "General Dentistry & Cleaning",
+    "category": "General",
+    "price": 2000,
+    "fee": "₱2,000",
+    "desc": "Essential ultrasonic oral prophylaxis, cavity fillings, and preventive maintenance.",
+    "duration": "45 mins",
+    "active": true
+  },
+  {
+    "id": "srv-04",
+    "code": "04 / 06",
+    "name": "In-Chair Teeth Whitening",
+    "category": "Aesthetic",
+    "price": 8000,
+    "fee": "₱8,000",
+    "desc": "Safe, enamel-gentle medical teeth whitening designed to brighten your smile.",
+    "duration": "60 mins",
+    "active": true
+  },
+  {
+    "id": "srv-05",
+    "code": "05 / 06",
+    "name": "Porcelain Veneers & Makeovers",
+    "category": "Aesthetic",
+    "price": 15000,
+    "fee": "₱15,000 / tooth",
+    "desc": "Ultrathin ceramic facings handcrafted to correct discoloration, gaps, and chips.",
+    "duration": "90 mins",
+    "active": true
+  },
+  {
+    "id": "srv-06",
+    "code": "06 / 06",
+    "name": "Restorations & Tooth Preservation",
+    "category": "General",
+    "price": 2500,
+    "fee": "₱2,500",
+    "desc": "Gentle root canal therapy, tooth restorations, and dental crowns engineered to relieve pain.",
+    "duration": "60 mins",
+    "active": true
+  },
+  {
+    "id": "srv-07",
+    "code": "07 / 08",
+    "name": "Tooth Extraction & Minor Surgery",
+    "category": "Surgical",
+    "price": 3000,
+    "fee": "₱3,000",
+    "desc": "Safe and painless surgical extraction, wisdom tooth management, and suture care.",
+    "duration": "45 mins",
+    "active": true
+  },
+  {
+    "id": "srv-08",
+    "code": "08 / 08",
+    "name": "General Dental Consultation",
+    "category": "General",
+    "price": 500,
+    "fee": "₱500",
+    "desc": "Comprehensive oral examination, digital bite assessment, and personalized treatment consultation.",
+    "duration": "30 mins",
+    "active": true
+  }
+]

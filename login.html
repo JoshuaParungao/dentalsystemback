@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Login | O'Clear Dental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="portal-page">
+    <main class="login-layout">
+      <section class="login-brand-panel">
+        <a class="brand" href="index.html">
+          <img src="images/logo.png" alt="O'Clear Dental Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: contain; margin-right: 8px;" />
+          <span><strong>O’CLEAR</strong><small>DENTAL</small></span>
+        </a>
+        <div>
+          <p class="eyebrow light"><span></span> Clinic management portal</p>
+          <h1>Care is clearer<br /><em>when organized.</em></h1>
+          <p>Manage appointments, patients, services, and clinic stocks in one simple workspace.</p>
+        </div>
+        <small class="portal-caption">For authorized O’Clear Dental staff only.</small>
+      </section>
+      <section class="login-panel">
+        <div class="login-box">
+          <a class="back-link" href="index.html">← Back to website</a>
+          <p class="eyebrow"><span></span> Welcome back</p>
+          <h2>Sign in to your<br /><em>clinic portal.</em></h2>
+          <form id="login-form">
+            <label>Email address<input type="email" name="email" required placeholder="you@ocleardental.com" /></label>
+            <label>Password<input type="password" name="password" required placeholder="Enter your password" /></label>
+            <div class="login-options"><label class="remember"><input type="checkbox" /> Remember me</label><a href="#">Forgot password?</a></div>
+            <button class="button button-primary" type="submit">Sign in <span>↗</span></button>
+            <p class="login-status" role="status"></p>
+          </form>
+          <p class="login-help">Need access? Contact your clinic administrator.</p>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.querySelector("#login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        window.location.href = "dashboard.html";
+      });
+    </script>
+  </body>
+</html>

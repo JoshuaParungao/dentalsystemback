@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  dental-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oclear-dental
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      # Persistent storage volume for clinic records so data is never lost on redeploy
+      - dental_data:/app/data
+
+volumes:
+  dental_data:
+    driver: local

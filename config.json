@@ -1,0 +1,10 @@
+{
+  "SEMAPHORE_API_KEY": "",
+  "SEMAPHORE_SENDER_NAME": "OCLEAR",
+  "RESEND_API_KEY": "",
+  "RESEND_FROM_EMAIL": "O'Clear Dental <onboarding@resend.dev>",
+  "CLINIC_PHONE": "0927-136-0441",
+  "CLINIC_ADDRESS": "Arayat, Pampanga · Philippines",
+  "PAYMONGO_SECRET_KEY": "",
+  "PAYMONGO_PUBLIC_KEY": ""
+}

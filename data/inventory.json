@@ -1,0 +1,160 @@
+[
+  {
+    "id": "inv-01",
+    "item": "Disposable Surgical Masks",
+    "category": "PPE",
+    "qty": 24,
+    "minQty": 50,
+    "unit": "pieces",
+    "status": "Low",
+    "last_taken": {
+      "staff": "Staff Rose",
+      "qty": 10,
+      "date": "2026-09-27 14:30",
+      "reason": "Morning clinic setups"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 10,
+        "staff": "Staff Rose",
+        "remaining": 24,
+        "date": "2026-09-27 14:30",
+        "reason": "Morning clinic setups"
+      }
+    ]
+  },
+  {
+    "id": "inv-02",
+    "item": "Latex Gloves · Medium",
+    "category": "PPE",
+    "qty": 3,
+    "minQty": 10,
+    "unit": "boxes",
+    "status": "Low",
+    "last_taken": {
+      "staff": "Dr. Claire",
+      "qty": 1,
+      "date": "Sep 27 08:22 PM",
+      "reason": "Aligner Checkup Patient"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 1,
+        "staff": "Dr. Claire",
+        "remaining": 3,
+        "date": "Sep 27 08:22 PM",
+        "reason": "Aligner Checkup Patient"
+      },
+      {
+        "action": "kumuha",
+        "qty": 1,
+        "staff": "Dr. Claire",
+        "remaining": 4,
+        "date": "2026-09-27 16:15",
+        "reason": "Aligner Consultation"
+      }
+    ]
+  },
+  {
+    "id": "inv-03",
+    "item": "Dental Composite Syringe (A2)",
+    "category": "Materials",
+    "qty": 3,
+    "minQty": 5,
+    "unit": "syringes",
+    "status": "Low",
+    "last_taken": {
+      "staff": "Dr. Claire",
+      "qty": 1,
+      "date": "2026-09-26 11:20",
+      "reason": "Restoration filling"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 1,
+        "staff": "Dr. Claire",
+        "remaining": 3,
+        "date": "2026-09-26 11:20",
+        "reason": "Restoration filling"
+      }
+    ]
+  },
+  {
+    "id": "inv-04",
+    "item": "Sterilization Autoclave Pouches",
+    "category": "Sterilization",
+    "qty": 180,
+    "minQty": 50,
+    "unit": "pouches",
+    "status": "Good",
+    "last_taken": {
+      "staff": "Staff Rose",
+      "qty": 20,
+      "date": "2026-09-27 09:00",
+      "reason": "Autoclave tray sterilization"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 20,
+        "staff": "Staff Rose",
+        "remaining": 180,
+        "date": "2026-09-27 09:00",
+        "reason": "Autoclave tray sterilization"
+      }
+    ]
+  },
+  {
+    "id": "inv-05",
+    "item": "Prophy Paste (Mint)",
+    "category": "Preventive",
+    "qty": 8,
+    "minQty": 3,
+    "unit": "tubs",
+    "status": "Good",
+    "last_taken": {
+      "staff": "Staff Rose",
+      "qty": 1,
+      "date": "2026-09-25 15:45",
+      "reason": "Teeth cleaning patient"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 1,
+        "staff": "Staff Rose",
+        "remaining": 8,
+        "date": "2026-09-25 15:45",
+        "reason": "Teeth cleaning patient"
+      }
+    ]
+  },
+  {
+    "id": "inv-06",
+    "item": "Orthodontic Archwires (0.016 NiTi)",
+    "category": "Materials",
+    "qty": 15,
+    "minQty": 10,
+    "unit": "packs",
+    "status": "Good",
+    "last_taken": {
+      "staff": "Dr. Claire",
+      "qty": 2,
+      "date": "2026-09-27 10:30",
+      "reason": "Bracket adjustment"
+    },
+    "history": [
+      {
+        "action": "kumuha",
+        "qty": 2,
+        "staff": "Dr. Claire",
+        "remaining": 15,
+        "date": "2026-09-27 10:30",
+        "reason": "Bracket adjustment"
+      }
+    ]
+  }
+]

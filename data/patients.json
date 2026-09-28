@@ -1,0 +1,606 @@
+[
+  {
+    "id": "pat-101",
+    "name": "Maria Santos",
+    "age": 26,
+    "phone": "0917-555-1234",
+    "email": "maria.santos@example.com",
+    "connected_to": "Viber",
+    "hmo": "Maxicare",
+    "status": "In Treatment",
+    "last_visit": "2026-09-15",
+    "next_visit": "2026-10-15",
+    "notes": "Patient prefers Saturday morning appointments. Excellent compliance with aligner wear.",
+    "treatment_name": "Clear Aligners (Digital Smile Design)",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 35,
+    "treatment_step": "Tray 4 of 12 (Bi-weekly change)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-08-10",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Comprehensive 3D Intraoral Scan & ClinCheck Plan",
+        "date": "2026-08-10",
+        "done": true
+      },
+      {
+        "title": "Attachment Bonding & Tray 1-3 Handover",
+        "date": "2026-08-24",
+        "done": true
+      },
+      {
+        "title": "Mid-Arch Tracking Check & IPR (Tray 4)",
+        "date": "2026-09-15",
+        "done": true
+      },
+      {
+        "title": "Mid-treatment Progress Assessment (Tray 8)",
+        "date": "2026-11-01",
+        "done": false
+      },
+      {
+        "title": "Final Detailing, Polish & Retainer Fitting",
+        "date": "2026-12-15",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-15",
+        "procedure": "Tray 4 Fitting & Interproximal Reduction",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Teeth tracking accurately with 3D model. 0.2mm IPR performed on mesial of #24. Next check on Tray 6."
+      },
+      {
+        "date": "2026-08-24",
+        "procedure": "Attachments Placement & Tray Delivery",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Composite attachments bonded to teeth #13, #23, #34, #44. Patient instructed to wear 22 hrs daily."
+      },
+      {
+        "date": "2026-08-10",
+        "procedure": "Initial Digital Scanning & Bite Record",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "iTero 3D digital scan completed. Mild Class I crowding with 3mm deep bite."
+      }
+    ],
+    "tooth_chart": {
+      "13": {
+        "status": "Attachment",
+        "notes": "Composite aligner attachment"
+      },
+      "16": {
+        "status": "Restored",
+        "notes": "Old composite filling, sound"
+      },
+      "23": {
+        "status": "Attachment",
+        "notes": "Composite aligner attachment"
+      },
+      "34": {
+        "status": "Attachment",
+        "notes": "Composite aligner attachment"
+      },
+      "44": {
+        "status": "Attachment",
+        "notes": "Composite aligner attachment"
+      }
+    },
+    "prescriptions": [
+      {
+        "id": "RX-2026-101",
+        "date": "2026-08-24",
+        "doctor": "Dr. Claire Cordova, DMD",
+        "diagnosis": "Mild dental soreness secondary to aligner attachment bonding",
+        "patient_weight": "52 kg",
+        "items": [
+          {
+            "drug": "Mefenamic Acid 500mg Capsule",
+            "sig": "Take 1 capsule every 8 hours as needed after meals for dental discomfort",
+            "qty": "6 capsules"
+          },
+          {
+            "drug": "Chlorhexidine Digluconate 0.12% Oral Rinse",
+            "sig": "Swish 15 mL for 30 seconds twice daily after brushing for 14 days",
+            "qty": "1 bottle (250 mL)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pat-102",
+    "name": "Jose Dela Cruz",
+    "age": 34,
+    "phone": "0928-888-4321",
+    "email": "jose.delacruz@example.com",
+    "connected_to": "WhatsApp",
+    "hmo": "None / Self-pay",
+    "status": "In Treatment",
+    "last_visit": "2026-09-20",
+    "next_visit": "2026-10-18",
+    "notes": "Lower arch bracket adjusted. Oral hygiene satisfactory.",
+    "treatment_name": "Orthodontic Brackets & Archwire Alignment",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 60,
+    "treatment_step": "Phase 3 of 5 (0.016x0.022 Rectangular NiTi)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-05-15",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Full Bracket Bonding (Upper & Lower)",
+        "date": "2026-05-15",
+        "done": true
+      },
+      {
+        "title": "Leveling & Initial Alignment (0.014 NiTi)",
+        "date": "2026-06-20",
+        "done": true
+      },
+      {
+        "title": "Rotation Correction & Arch Expansion",
+        "date": "2026-08-12",
+        "done": true
+      },
+      {
+        "title": "Space Closure & Bite Settling (Powerchains)",
+        "date": "2026-09-20",
+        "done": true
+      },
+      {
+        "title": "Debonding & Fixed Lingual Retainer",
+        "date": "2026-12-05",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-20",
+        "procedure": "Archwire Exchange & Powerchain Activation",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Placed 0.016x0.022 SS upper archwire with short powerchains #13-#15 to close residual space."
+      },
+      {
+        "date": "2026-08-12",
+        "procedure": "Routine Bracket Adjustment & O-ring change",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Replaced rebonded lower canine bracket. Blue elastomeric ligatures placed."
+      }
+    ],
+    "tooth_chart": {
+      "11": {
+        "status": "Sound"
+      },
+      "12": {
+        "status": "Sound"
+      },
+      "16": {
+        "status": "Restored",
+        "notes": "Occlusal composite"
+      },
+      "18": {
+        "status": "Missing",
+        "notes": "Congenitally missing"
+      },
+      "28": {
+        "status": "Missing",
+        "notes": "Congenitally missing"
+      },
+      "46": {
+        "status": "Restored",
+        "notes": "Class I restoration"
+      }
+    },
+    "prescriptions": [
+      {
+        "id": "RX-2026-102",
+        "date": "2026-09-20",
+        "doctor": "Dr. Claire Cordova, DMD",
+        "diagnosis": "Orthodontic wire adjustment discomfort",
+        "patient_weight": "70 kg",
+        "items": [
+          {
+            "drug": "Ibuprofen 400mg Tablet",
+            "sig": "Take 1 tablet every 8 hours after food as needed for wire pressure",
+            "qty": "6 tablets"
+          },
+          {
+            "drug": "Orthodontic Relief Wax",
+            "sig": "Apply small pea-sized amount onto bracket hooks causing mucosal irritation",
+            "qty": "1 pack"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pat-d74b858d",
+    "name": "Katrina Lopez",
+    "age": 30,
+    "phone": "0918-999-1234",
+    "email": "katrina@example.com",
+    "connected_to": "Viber",
+    "hmo": "Maxicare",
+    "status": "In Treatment",
+    "last_visit": "2026-09-25",
+    "next_visit": "2026-10-05",
+    "notes": "Cosmetic makeover for 6 anterior teeth. Pre-op shade: A3.",
+    "treatment_name": "Porcelain Veneers & Smile Makeover",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 50,
+    "treatment_step": "Step 2 of 4 (Mockup Approved, Prep & Temps Placed)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-09-12",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Esthetic Evaluation & Digital Smile Design",
+        "date": "2026-09-12",
+        "done": true
+      },
+      {
+        "title": "Diagnostic Wax-up & Intraoral Mockup Approval",
+        "date": "2026-09-25",
+        "done": true
+      },
+      {
+        "title": "Minimal Prep, Final Impression & Lab Dispatch",
+        "date": "2026-10-05",
+        "done": false
+      },
+      {
+        "title": "Final Ceramic Bonding & Occlusal Guard Delivery",
+        "date": "2026-10-18",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-25",
+        "procedure": "Mockup Try-in & Shade Matching",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Intraoral bis-acryl mockup tried in. Patient highly pleased with length and emergence profile. Desired shade: BL2."
+      },
+      {
+        "date": "2026-09-12",
+        "procedure": "Digital Photographic Series & Facial Analysis",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Full digital photographic suite taken. Upper midline centered with facial plane."
+      }
+    ],
+    "tooth_chart": {},
+    "prescriptions": []
+  },
+  {
+    "id": "pat-104",
+    "name": "Jonathan Gomez",
+    "age": 41,
+    "phone": "0915-777-6543",
+    "email": "jonathan.g@example.com",
+    "connected_to": "Telegram",
+    "hmo": "Intellicare",
+    "status": "In Treatment",
+    "last_visit": "2026-09-26",
+    "next_visit": "2026-10-02",
+    "notes": "Mild tea staining. Requested accelerated in-chair whitening.",
+    "treatment_name": "In-Chair Medical Teeth Whitening",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 40,
+    "treatment_step": "Session 1 of 2 (Prophylaxis & Baseline Shade A3.5)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-09-26",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Oral Prophylaxis & Enamel Polish",
+        "date": "2026-09-26",
+        "done": true
+      },
+      {
+        "title": "Light-Activated Whitening Cycle (3x 15 mins)",
+        "date": "2026-10-02",
+        "done": false
+      },
+      {
+        "title": "Remineralizing Fluoride Treatment & Post-Care",
+        "date": "2026-10-02",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-26",
+        "procedure": "Deep Prophylaxis & Shade Determination",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Ultrasonic scaling completed to remove surface extrinsic stains. Baseline shade recorded as Vita A3.5."
+      }
+    ],
+    "tooth_chart": {},
+    "prescriptions": []
+  },
+  {
+    "id": "pat-103",
+    "name": "Angela Reyes",
+    "age": 29,
+    "phone": "0939-222-9876",
+    "email": "angela.reyes@example.com",
+    "connected_to": "Regular Mobile / SMS",
+    "hmo": "Medicard",
+    "status": "Completed",
+    "last_visit": "2026-09-22",
+    "next_visit": "2026-11-20",
+    "notes": "Treatment completed. 6-month preventive recall scheduled.",
+    "treatment_name": "Composite Restoration & Ultrasonic Scaling",
+    "treatment_status": "Done",
+    "treatment_progress": 100,
+    "treatment_step": "Completed ✓ (Tooth #14 & #15 Restored)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-09-10",
+    "treatment_end_date": "2026-09-22",
+    "milestones": [
+      {
+        "title": "Bitewing Radiographs & Caries Assessment",
+        "date": "2026-09-10",
+        "done": true
+      },
+      {
+        "title": "Decay Excavation & Direct Resin Composite (#14, #15)",
+        "date": "2026-09-15",
+        "done": true
+      },
+      {
+        "title": "Full Mouth Ultrasonic Scaling & Enamel Polish",
+        "date": "2026-09-22",
+        "done": true
+      },
+      {
+        "title": "Post-Op Check & Occlusal Articulation Clearance",
+        "date": "2026-09-22",
+        "done": true
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-22",
+        "procedure": "Ultrasonic Prophylaxis & High-Shine Buffing",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Full mouth scaling completed. Margin check on restorations #14 and #15 shows smooth integration. Discharged with clean bill of oral health."
+      },
+      {
+        "date": "2026-09-15",
+        "procedure": "Class II Composite Restorations",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Caries excavated under local anesthesia (Lidocaine 2% with 1:100k epi). 3M Filtek Supreme A2 composite placed and light cured."
+      }
+    ],
+    "tooth_chart": {},
+    "prescriptions": []
+  },
+  {
+    "id": "pat-105",
+    "name": "Robert Tan",
+    "age": 38,
+    "phone": "0917-888-9900",
+    "email": "robert.tan@example.com",
+    "connected_to": "Viber",
+    "hmo": "PhilCare",
+    "status": "Completed",
+    "last_visit": "2026-08-19",
+    "next_visit": "2027-02-19",
+    "notes": "Impacted wisdom tooth removed. Full socket healing verified.",
+    "treatment_name": "Surgical Impacted Wisdom Tooth Extraction",
+    "treatment_status": "Done",
+    "treatment_progress": 100,
+    "treatment_step": "Completed ✓ (Sutures removed, healthy granulation)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-08-05",
+    "treatment_end_date": "2026-08-19",
+    "milestones": [
+      {
+        "title": "Panoramic Radiograph & Nerve Proximity Evaluation",
+        "date": "2026-08-05",
+        "done": true
+      },
+      {
+        "title": "Surgical Odontectomy Tooth #48 (Under LA)",
+        "date": "2026-08-12",
+        "done": true
+      },
+      {
+        "title": "Suture Removal & Post-Surgical Healing Check",
+        "date": "2026-08-19",
+        "done": true
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-08-19",
+        "procedure": "Suture Removal & Healing Check",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Silk sutures removed. No swelling, normal mouth opening restored. Alveolar socket healing cleanly."
+      },
+      {
+        "date": "2026-08-12",
+        "procedure": "Surgical Extraction of Mesioangular Impacted #48",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Mucoperiosteal flap reflected, bone guttering, tooth sectioned and removed atraumatically. 3-0 Silk suture placed. Antibiotics & analgesics prescribed."
+      }
+    ],
+    "tooth_chart": {},
+    "prescriptions": []
+  },
+  {
+    "id": "pat-pedia-01",
+    "name": "Lucas Mendoza",
+    "age": 7,
+    "phone": "0918-333-4455",
+    "email": "sarah.mendoza@example.com",
+    "connected_to": "Viber",
+    "hmo": "Maxicare",
+    "status": "In Treatment",
+    "last_visit": "2026-09-25",
+    "next_visit": "2026-10-10",
+    "notes": "Pediatric patient. Very cooperative with Dr. Claire. Mild caries on primary molars.",
+    "treatment_name": "Pediatric Preventive Sealants & Caries Arrest",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 50,
+    "treatment_step": "Step 2 of 3 (Upper Sealants Done, Lower Quadrants Next)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-09-18",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Oral Prophylaxis & Topical Fluoride Gel Application",
+        "date": "2026-09-18",
+        "done": true
+      },
+      {
+        "title": "Pit & Fissure Sealants on Teeth #55, #65",
+        "date": "2026-09-25",
+        "done": true
+      },
+      {
+        "title": "Glass Ionomer Sealants on Lower Molars #75, #85",
+        "date": "2026-10-10",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-25",
+        "procedure": "Pit & Fissure Sealants Teeth #55, #65",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Teeth isolated with cotton rolls. Acid etched for 15 sec, 3M Clinpro sealant placed and light cured. Articulation checked."
+      },
+      {
+        "date": "2026-09-18",
+        "procedure": "Pediatric Prophylaxis & Full Mouth Assessment",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Initial pediatric dental visit. Child engaged and well-behaved with tell-show-do technique. Fluoride varnish applied."
+      }
+    ],
+    "tooth_chart": {
+      "55": {
+        "status": "Sealant",
+        "notes": "Resin-based sealant placed"
+      },
+      "65": {
+        "status": "Sealant",
+        "notes": "Resin-based sealant placed"
+      },
+      "75": {
+        "status": "Caries",
+        "notes": "Incipient occlusal fissure decay"
+      },
+      "85": {
+        "status": "Caries",
+        "notes": "Early enamel lesion"
+      }
+    },
+    "prescriptions": [
+      {
+        "id": "RX-2026-201",
+        "date": "2026-09-25",
+        "doctor": "Dr. Claire Cordova, DMD",
+        "diagnosis": "Pediatric Enamel Demineralization & Caries Prevention",
+        "patient_weight": "24 kg",
+        "items": [
+          {
+            "drug": "Sodium Fluoride 0.05% Pediatric Oral Rinse",
+            "sig": "Swish 10 mL once daily before bedtime after brushing. Do not swallow.",
+            "qty": "1 bottle (250 mL)"
+          },
+          {
+            "drug": "Paracetamol 250mg/5mL Pediatric Syrup",
+            "sig": "Give 5 mL every 4 to 6 hours PRN only if child complains of tooth sensitivity",
+            "qty": "1 bottle (60 mL)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pat-pedia-02",
+    "name": "Chloe Bautista",
+    "age": 5,
+    "phone": "0922-444-5566",
+    "email": "mark.bautista@example.com",
+    "connected_to": "WhatsApp",
+    "hmo": "Intellicare",
+    "status": "In Treatment",
+    "last_visit": "2026-09-22",
+    "next_visit": "2026-10-06",
+    "notes": "Pediatric patient. Nighttime bottle history. Needs stainless steel crown on #54.",
+    "treatment_name": "Pediatric Pulpotomy & Stainless Steel Crown",
+    "treatment_status": "Ongoing",
+    "treatment_progress": 60,
+    "treatment_step": "Step 2 of 3 (Pulpotomy completed, SSC Try-in Done)",
+    "treatment_doctor": "Dr. Claire Cordova",
+    "treatment_start_date": "2026-09-15",
+    "treatment_end_date": "",
+    "milestones": [
+      {
+        "title": "Pediatric Diagnostic Radiographs & Pulp Vitality",
+        "date": "2026-09-15",
+        "done": true
+      },
+      {
+        "title": "Vital Pulpotomy & Biodentine/MTA Placement (#54)",
+        "date": "2026-09-22",
+        "done": true
+      },
+      {
+        "title": "Preformed Stainless Steel Crown Final Cementation",
+        "date": "2026-10-06",
+        "done": false
+      }
+    ],
+    "clinical_notes": [
+      {
+        "date": "2026-09-22",
+        "procedure": "Vital Pulpotomy Tooth #54",
+        "doctor": "Dr. Claire Cordova",
+        "notes": "Local anesthesia administered. Deep caries removed, coronal pulp amputated. Hemostasis achieved in 3 mins. Biodentine placed over pulp stumps. Intermediate restorative material placed."
+      }
+    ],
+    "tooth_chart": {
+      "54": {
+        "status": "Crown",
+        "notes": "Pulpotomy done, Stainless Steel Crown planned"
+      },
+      "64": {
+        "status": "Caries",
+        "notes": "Moderate occlusal decay"
+      },
+      "74": {
+        "status": "Sound"
+      },
+      "84": {
+        "status": "Sound"
+      }
+    },
+    "prescriptions": [
+      {
+        "id": "RX-2026-202",
+        "date": "2026-09-22",
+        "doctor": "Dr. Claire Cordova, DMD",
+        "diagnosis": "Acute reversible pulpitis post-pulpotomy, Pediatric",
+        "patient_weight": "18 kg",
+        "items": [
+          {
+            "drug": "Amoxicillin 250mg/5mL Oral Suspension",
+            "sig": "Give 4.5 mL orally every 8 hours for 5 days after feeding",
+            "qty": "1 bottle (60 mL)"
+          },
+          {
+            "drug": "Paracetamol 120mg/5mL Pediatric Drops / Syrup",
+            "sig": "Give 5 mL every 4 to 6 hours as needed for discomfort or crying",
+            "qty": "1 bottle (60 mL)"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "oclear-dental-clinic",
+  "version": "1.0.0",
+  "description": "O'Clear Dental Clinic - Web Portal, Patient Catalog, Treatment Tracker & Billing Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "dental-clinic",
+    "coolify",
+    "docker",
+    "patient-catalog",
+    "treatment-tracker"
+  ],
+  "author": "O'Clear Dental Clinic",
+  "license": "ISC"
+}

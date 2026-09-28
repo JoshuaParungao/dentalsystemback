@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="O'Clear Dental Clinic — General Dentistry and Practicing Orthodontics by Dr. Claire Ann T. Cordova. Your smile, made clear." />
+  <title>O’Clear Dental Clinic | Your smile, made clear.</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- STICKY LUXURY HEADER -->
+  <header class="us-header" id="header" role="banner">
+    <div class="shell us-header__inner">
+      <a href="#hero" class="us-brand" aria-label="O'Clear Dental Clinic Home">
+        <img class="us-brand__logo" src="images/logo.png" alt="O'Clear Dental Logo" width="52" height="52" />
+        <div class="us-brand__text">
+          <span class="us-brand__title">O’CLEAR DENTAL</span>
+          <span class="us-brand__tag">Your smile, made clear.</span>
+        </div>
+      </a>
+
+      <nav class="us-nav" aria-label="Main Navigation">
+        <a href="#hero" class="active">Home</a>
+        <a href="#doctor">Dr. Claire</a>
+        <a href="#services">Disciplines</a>
+        <a href="#clinic">Our Clinic</a>
+        <a href="#location">Schedule & Location</a>
+        <a href="#promise">Our Promise</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="us-header__cluster">
+        <a href="login.html" class="us-header__portal">Staff Portal</a>
+        <a href="#appointment" class="btn-navy">Book Appointment</a>
+        <button class="us-hamburger" id="hamburger-btn" aria-label="Open Navigation Menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER NAVIGATION -->
+  <aside class="us-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="us-drawer__header">
+      <a href="#hero" class="us-brand">
+        <img class="us-brand__logo" src="images/logo.png" alt="O'Clear Dental Logo" width="44" height="44" />
+        <div class="us-brand__text">
+          <span class="us-brand__title">O’CLEAR DENTAL</span>
+          <span class="us-brand__tag">Your smile, made clear.</span>
+        </div>
+      </a>
+      <button class="us-drawer__close" id="drawer-close-btn" type="button">✕ Close</button>
+    </div>
+    <nav class="us-drawer__nav">
+      <a href="#hero" class="drawer-link">01 · Home</a>
+      <a href="#doctor" class="drawer-link">03 · Dr. Claire</a>
+      <a href="#services" class="drawer-link">04 · Disciplines of Care</a>
+      <a href="#clinic" class="drawer-link">05 · Inside Our Clinic</a>
+      <a href="#location" class="drawer-link">06 · Schedule & Location</a>
+      <a href="#promise" class="drawer-link">07 · Our Promise</a>
+      <a href="#faq" class="drawer-link">08 · Frequently Asked</a>
+      <a href="login.html" class="drawer-link">Staff Portal Login ↗</a>
+    </nav>
+    <div class="us-drawer__footer">
+      <a href="#appointment" class="btn-navy drawer-link" style="width: 100%;">Book Appointment →</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- CHAPTER ONE · THE WELCOME (HERO) -->
+    <section class="us-hero" id="hero">
+      <div class="us-hero__bg" aria-hidden="true"></div>
+      <span class="chapter-backdrop" aria-hidden="true">clarity</span>
+
+      <div class="shell us-hero__content">
+        <div class="us-hero__copy">
+          <p class="us-eyebrow us-hero__eyebrow">Chapter One · Welcome to O'Clear Dental</p>
+          <h1 class="us-display us-hero__headline">
+            <span class="us-hero__headline-italic">Your smile,</span>
+            <span class="us-hero__headline-normal">made clear.</span>
+          </h1>
+          <p class="us-hero__body">
+            World-class dental care delivered with thoughtful, personalized precision. 
+            Providing general dentistry and practicing orthodontics led by <strong>Dr. Claire Ann T. Cordova</strong>.
+          </p>
+          <div class="us-hero__ctas">
+            <a class="btn-navy" href="#appointment">Book an Appointment →</a>
+            <a class="btn-ghost-navy" href="#clinic">✦ Tour Our Clinic</a>
+          </div>
+        </div>
+
+        <!-- Hero Feature Card -->
+        <div class="us-hero__card" aria-label="Operatory Suite Highlight">
+          <img class="us-hero__card-img" src="images/Treatment room.png" alt="O'Clear Dental Modern Operatory Suite" />
+          <div class="us-hero__card-overlay">
+            <span class="us-hero__card-badge">Operatory Highlight</span>
+            <h2 class="us-hero__card-title">Comfort-First Operatory Suite</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Chapter Counter Strip -->
+      <div class="shell">
+        <div class="us-hero__counter-strip" aria-hidden="true">
+          <span class="us-hero__counter-chapter">01 / 10 · The Welcome</span>
+          <div class="us-hero__counters">
+            <span><span class="us-hero__counter-num">100%</span> Patient-First Care</span>
+            <span><span class="us-hero__counter-num">Digital</span> Orthodontics</span>
+            <span><span class="us-hero__counter-num">1-on-1</span> Private Consultations</span>
+          </div>
+          <span class="us-hero__counter-loc">Arayat, Pampanga · Philippines</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER TWO · PRESS & RECOGNITION RIBBON -->
+    <section class="us-press" aria-label="Media and Recognition">
+      <div class="shell us-press__inner">
+        <span class="us-press__label">Recognized Clinical Standards</span>
+        <div class="us-press__logos">
+          <span class="us-press__item">General Dentistry</span>
+          <span class="us-press__item">Orthodontic Care</span>
+          <span class="us-press__item">Aesthetic Dentistry</span>
+          <span class="us-press__item">Oral Prophylaxis</span>
+          <span class="us-press__item">Clear Aligners</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER THREE · THE HANDS BEHIND THE SMILE (Doctor Spotlight) -->
+    <section class="us-founder" id="doctor">
+      <span class="chapter-backdrop" aria-hidden="true">doctor</span>
+      <div class="shell us-founder__inner">
+        <div class="us-founder__portrait-wrap">
+          <div class="us-founder__portrait-frame">
+            <img class="us-founder__portrait" src="images/Clear portrait ni Dr. Claire.png" alt="Dr. Claire Ann T. Cordova at O'Clear Dental" />
+            <div class="us-founder__tag-pill">
+              <span class="us-founder__tag-spark">✦</span>
+              <div class="us-founder__tag-text">
+                <strong>Dr. Claire Ann T. Cordova</strong>
+                <small>General Dentistry & Practicing Orthodontics</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="us-founder__copy">
+          <p class="us-eyebrow">Chapter Three · The Hands Behind the Smile</p>
+          <h2 class="us-display us-founder__name">Dr. Claire Ann T. Cordova</h2>
+          <p style="font-size: 15px; font-weight: 600; color: var(--sapphire-light); letter-spacing: 0.08em; text-transform: uppercase; margin-top: -12px; margin-bottom: 24px;">
+            General Dentistry and Practicing Orthodontics
+          </p>
+          <hr class="us-founder__rule" />
+
+          <blockquote class="us-founder__quote">
+            "I do not believe a smile is a transaction. It is confidence — a quiet, daily kind of beauty. To shape one is the closest thing I know to making art."
+          </blockquote>
+
+          <p class="us-founder__bio">
+            At O’Clear Dental Clinic, every diagnosis and treatment plan is personal. Specializing in general dentistry and practicing orthodontics, Dr. Claire combines gentle chairside care with hospital-grade sterilization protocols. Whether guiding patients through orthodontic tooth alignment or comprehensive preventive oral care, her philosophy centers around clarity, patient comfort, and long-lasting dental health.
+          </p>
+
+          <div class="us-founder__stats">
+            <div>
+              <span class="us-founder__stat-num">1-on-1</span>
+              <span class="us-founder__stat-label">Personalized Care</span>
+            </div>
+            <div>
+              <span class="us-founder__stat-num">5.0 ★</span>
+              <span class="us-founder__stat-label">Patient Satisfaction</span>
+            </div>
+            <div>
+              <span class="us-founder__stat-num">Zero</span>
+              <span class="us-founder__stat-label">Rushed Visits</span>
+            </div>
+          </div>
+
+          <div class="us-founder__ctas">
+            <a class="btn-navy" href="#appointment">Consult Dr. Claire →</a>
+            <a class="btn-ghost-navy" href="#services">Explore Disciplines</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER FOUR · DISCIPLINES OF CARE (Services) -->
+    <section class="us-services" id="services">
+      <div class="shell">
+        <div class="us-services__header">
+          <p class="us-eyebrow">Chapter Four · Disciplines of Care</p>
+          <h2 class="us-display us-services__headline">A complete discipline of care.</h2>
+          <p class="us-lead" style="margin: 0 auto;">
+            From general oral health to personalized orthodontic smile alignment, every treatment is planned for your lifelong comfort and confidence.
+          </p>
+        </div>
+
+        <div class="us-services__grid" id="public-services-grid">
+          <!-- Service 01 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">01 / 08</span>
+                <span class="us-service-card__icon">⌁</span>
+              </div>
+              <h3 class="us-service-card__title">Orthodontics & Tooth Alignment</h3>
+              <p class="us-service-card__desc">
+                Personalized orthodontic alignment and brackets tailored to straighten crowded or misaligned teeth for a balanced, harmonious bite.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Orthodontics & Tooth Alignment" class="us-service-card__link">Plan Orthodontics <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 02 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">02 / 08</span>
+                <span class="us-service-card__icon">✦</span>
+              </div>
+              <h3 class="us-service-card__title">Clear Aligners</h3>
+              <p class="us-service-card__desc">
+                Discreet, transparent trays custom-planned using digital smile scanning to gently straighten teeth without traditional metal wires.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Clear Aligners" class="us-service-card__link">Consult Aligners <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 03 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">03 / 08</span>
+                <span class="us-service-card__icon">♧</span>
+              </div>
+              <h3 class="us-service-card__title">General Dentistry & Cleaning</h3>
+              <p class="us-service-card__desc">
+                Essential ultrasonic oral prophylaxis, cavity fillings, and preventive maintenance ensuring strong teeth and healthy gums.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="General Dentistry & Cleaning" class="us-service-card__link">Schedule Cleaning <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 04 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">04 / 08</span>
+                <span class="us-service-card__icon">◌</span>
+              </div>
+              <h3 class="us-service-card__title">In-Chair Teeth Whitening</h3>
+              <p class="us-service-card__desc">
+                Safe, enamel-gentle medical teeth whitening designed to lift stubborn stains and brighten your smile with minimal sensitivity.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="In-Chair Teeth Whitening" class="us-service-card__link">Book Whitening <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 05 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">05 / 08</span>
+                <span class="us-service-card__icon">▱</span>
+              </div>
+              <h3 class="us-service-card__title">Porcelain Veneers & Makeovers</h3>
+              <p class="us-service-card__desc">
+                Ultrathin ceramic facings handcrafted to correct discoloration, gaps, and chips with natural optical translucency.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Porcelain Veneers & Makeovers" class="us-service-card__link">Consult Veneers <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 06 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">06 / 08</span>
+                <span class="us-service-card__icon">⚙</span>
+              </div>
+              <h3 class="us-service-card__title">Restorations & Tooth Preservation</h3>
+              <p class="us-service-card__desc">
+                Gentle root canal therapy, tooth restorations, and dental crowns engineered to relieve pain and protect natural tooth structure.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Restorations & Tooth Preservation" class="us-service-card__link">Book Restorations <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 07 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">07 / 08</span>
+                <span class="us-service-card__icon">⚕</span>
+              </div>
+              <h3 class="us-service-card__title">Tooth Extraction & Minor Surgery</h3>
+              <p class="us-service-card__desc">
+                Safe and painless surgical extraction, wisdom tooth management, and suture care for comfort and quick recovery.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Tooth Extraction & Minor Surgery" class="us-service-card__link">Plan Surgery <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 08 -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">08 / 08</span>
+                <span class="us-service-card__icon">✦</span>
+              </div>
+              <h3 class="us-service-card__title">General Dental Consultation</h3>
+              <p class="us-service-card__desc">
+                Comprehensive oral examination, digital bite assessment, and personalized treatment consultation with Dr. Claire.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="General Dental Consultation" class="us-service-card__link">Book Consultation <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER FIVE · INSIDE OUR CLINIC -->
+    <section class="us-sanctuary" id="clinic">
+      <span class="chapter-backdrop" aria-hidden="true">comfort</span>
+      <div class="shell">
+        <div class="us-sanctuary__header">
+          <p class="us-eyebrow">Chapter Five · Inside Our Clinic</p>
+          <h2 class="us-display us-sanctuary__headline">Where clinical precision meets calm, personal comfort.</h2>
+          <p class="us-lead">
+            Every detail of O’Clear Dental Clinic is intentionally designed to replace dental anxiety with quiet elegance, warm hospitality, and immaculate hygiene.
+          </p>
+        </div>
+
+        <div class="us-sanctuary__tiles">
+          <!-- Pillar 1 -->
+          <article class="us-sanctuary__tile">
+            <div class="us-sanctuary__tile-imgwrap">
+              <img class="us-sanctuary__tile-img" src="images/Reception area.png" alt="O'Clear Dental Reception Lounge" loading="lazy" />
+              <div class="us-sanctuary__tile-overlay" aria-hidden="true"></div>
+              <div class="us-sanctuary__tile-caption">
+                <span class="us-sanctuary__tile-eyebrow">The Welcome Lounge</span>
+                <h3 class="us-sanctuary__tile-title">Reception & Lounge</h3>
+              </div>
+            </div>
+            <p class="us-sanctuary__tile-body">
+              A private welcome lounge featuring natural wood textures, comfortable leather seating, and refreshing refreshments designed for tranquility before your treatment.
+            </p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="us-sanctuary__tile">
+            <div class="us-sanctuary__tile-imgwrap">
+              <img class="us-sanctuary__tile-img" src="images/Treatment room.png" alt="O'Clear Dental Treatment Suite" loading="lazy" />
+              <div class="us-sanctuary__tile-overlay" aria-hidden="true"></div>
+              <div class="us-sanctuary__tile-caption">
+                <span class="us-sanctuary__tile-eyebrow">The Operatory</span>
+                <h3 class="us-sanctuary__tile-title">Treatment Suite</h3>
+              </div>
+            </div>
+            <p class="us-sanctuary__tile-body">
+              An ergonomic operatory suite equipped with whisper-quiet handpieces, overhead patient cinema displays, and sterilized hospital-grade air filtration.
+            </p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="us-sanctuary__tile">
+            <div class="us-sanctuary__tile-imgwrap">
+              <img class="us-sanctuary__tile-img" src="images/Clinic exteriorsignage.png" alt="O'Clear Dental Illuminated Exterior Signage" loading="lazy" />
+              <div class="us-sanctuary__tile-overlay" aria-hidden="true"></div>
+              <div class="us-sanctuary__tile-caption">
+                <span class="us-sanctuary__tile-eyebrow">The Facade</span>
+                <h3 class="us-sanctuary__tile-title">Clinic Entrance</h3>
+              </div>
+            </div>
+            <p class="us-sanctuary__tile-body">
+              A distinctive illuminated wood-slat facade and floor-to-ceiling glass welcoming you into an accessible, modern dental clinic crafted for total comfort.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER SIX · SCHEDULE & CLINIC LOCATION -->
+    <section class="us-locations" id="location">
+      <span class="chapter-backdrop" aria-hidden="true">visit</span>
+      <div class="shell">
+        <div class="us-locations__header">
+          <p class="us-eyebrow">Chapter Six · Schedule & Location</p>
+          <h2 class="us-display us-services__headline">Visit our modern clinic.</h2>
+          <p class="us-lead" style="margin: 0 auto;">
+            Plan your visit with our updated clinic hours. We look forward to welcoming you for your consultation and treatment.
+          </p>
+        </div>
+
+        <div class="us-locations__card">
+          <div class="us-locations__card-gallery">
+            <img class="us-locations__card-img" src="images/Clinic exteriorsignage.png" alt="O'Clear Dental Clinic Exterior" />
+            <span class="us-locations__card-badge">✦ O’Clear Dental Clinic</span>
+          </div>
+
+          <div class="us-locations__card-details">
+            <div>
+              <h3 class="us-locations__branch-name">O’Clear Dental Clinic</h3>
+              <p style="font-size: 14px; font-style: italic; color: var(--sapphire-light); margin-top: -6px; margin-bottom: 16px;">
+                "Your smile, made clear."
+              </p>
+              <div class="us-locations__rating">
+                <span class="us-locations__stars">★★★★★</span>
+                <strong>5.0 / 5.0</strong>
+                <span style="color: var(--text-muted);">(Verified Patient Care)</span>
+              </div>
+
+              <div class="us-locations__info-list">
+                <!-- Schedule breakdown -->
+                <div class="us-locations__info-item">
+                  <span class="us-locations__icon">🕒</span>
+                  <div style="width: 100%;">
+                    <strong style="color: var(--navy); display: block; margin-bottom: 4px;">Clinic Operating Schedule:</strong>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 4px; font-size: 13.5px;">
+                      <div><strong>Monday – Thursday:</strong> 9:00 AM – 6:00 PM</div>
+                      <div><strong style="color: #c93b2b;">Friday:</strong> <span style="background: #fde8e6; color: #c93b2b; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Temporarily Closed</span></div>
+                      <div><strong>Saturday:</strong> 9:00 AM – 6:00 PM</div>
+                      <div><strong>Sunday:</strong> 10:00 AM – 4:00 PM</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="us-locations__info-item">
+                  <span class="us-locations__icon">📞</span>
+                  <span><a href="tel:09271360441" style="color: var(--navy); font-weight: 700; font-size: 15px;">0927-136-0441</a> (Direct Appointment Line)</span>
+                </div>
+
+                <div class="us-locations__info-item">
+                  <span class="us-locations__icon">💬</span>
+                  <span><strong>Facebook:</strong> <a href="https://facebook.com" target="_blank" rel="noopener" style="color: var(--sapphire-light); font-weight: 600;">O’Clear Dental</a></span>
+                </div>
+
+                <div class="us-locations__info-item">
+                  <span class="us-locations__icon">📍</span>
+                  <span>O’Clear Dental Clinic, Arayat, Pampanga · Philippines</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="us-locations__card-ctas">
+              <a class="btn-navy" href="#appointment">Book Appointment →</a>
+              <a class="btn-ghost-navy" href="tel:09271360441">Call 0927-136-0441 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER SEVEN · THE O'CLEAR PATIENT PROMISE -->
+    <section class="us-stories" id="promise">
+      <div class="shell">
+        <div class="us-stories__header">
+          <p class="us-eyebrow">Chapter Seven · The O’Clear Promise</p>
+          <h2 class="us-display us-services__headline">Care built on integrity, comfort, and clinical excellence.</h2>
+          <p class="us-lead" style="margin: 0 auto;">
+            As a newly established clinic, we are devoted to setting the highest standard in patient experience. Here is our personal commitment to every patient who entrusts their smile to Dr. Claire.
+          </p>
+        </div>
+
+        <div class="us-stories__grid">
+          <article class="us-story-card">
+            <span class="us-story-card__tag">Pillar I · Comfort & Empathy</span>
+            <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--navy); margin-bottom: 12px; font-weight: 600;">
+              Gentle, Anxiety-Free Care
+            </h3>
+            <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+              We know dental visits can feel intimidating. Dr. Claire takes the time to listen, explain every step beforehand, and apply delicate, gentle techniques so you feel relaxed and completely at ease from start to finish.
+            </p>
+            <div class="us-story-card__author" style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sapphire-light);">
+                ✦ Patient-Paced · Zero Rush
+              </span>
+            </div>
+          </article>
+
+          <article class="us-story-card">
+            <span class="us-story-card__tag">Pillar II · Honesty & Clarity</span>
+            <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--navy); margin-bottom: 12px; font-weight: 600;">
+              Transparent Treatment Plans
+            </h3>
+            <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+              No confusing medical jargon, no pushed procedures, and no unexpected fees. We provide honest diagnostics and design a clear treatment pathway that fits your dental goals, schedule, and personal budget.
+            </p>
+            <div class="us-story-card__author" style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sapphire-light);">
+                ✦ Clear Explanations · No Hidden Costs
+              </span>
+            </div>
+          </article>
+
+          <article class="us-story-card">
+            <span class="us-story-card__tag">Pillar III · Clinical Safety</span>
+            <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--navy); margin-bottom: 12px; font-weight: 600;">
+              Hospital-Grade Sterilization
+            </h3>
+            <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+              Your safety is our utmost priority. Our operatory strictly follows hospital-level infection control, medical autoclave sterilization for every instrument, and meticulous sanitation between every single consultation.
+            </p>
+            <div class="us-story-card__author" style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sapphire-light);">
+                ✦ Autoclave Tested · Pure Hygiene
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER EIGHT · FREQUENTLY ASKED QUESTIONS (Accordion) -->
+    <section class="us-faq" id="faq">
+      <div class="shell us-faq__inner">
+        <aside class="us-faq__aside">
+          <div class="us-faq__aside-card">
+            <p class="us-eyebrow">Chapter Eight · Questions</p>
+            <h2 class="us-display us-faq__headline">Everything you want to <em>know.</em></h2>
+            <p class="us-faq__aside-desc">
+              Straight answers before you book — on our services, clinic hours, and what to expect during your first visit to O'Clear Dental.
+            </p>
+            <div class="us-faq__aside-contact">
+              <small>Call us for appointments</small>
+              <a href="tel:09271360441">0927-136-0441</a>
+              <div style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">Facebook: <strong>O’Clear Dental</strong></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="us-faq__list" role="region" aria-label="Frequently Asked Questions">
+          <details class="us-faq__item" open>
+            <summary class="us-faq__q">
+              <span>What services does Dr. Claire specialize in?</span>
+              <span class="us-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="us-faq__a">
+              Dr. Claire Ann T. Cordova specializes in General Dentistry and Practicing Orthodontics. Our clinic provides tooth alignment, clear aligners, oral prophylaxis, composite restorations, teeth whitening, porcelain veneers, and tooth preservation.
+            </div>
+          </details>
+
+          <details class="us-faq__item">
+            <summary class="us-faq__q">
+              <span>What are your clinic hours and open days?</span>
+              <span class="us-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="us-faq__a">
+              Our clinic schedule is:
+              <br />• <strong>Monday – Thursday:</strong> 9:00 AM – 6:00 PM
+              <br />• <strong>Friday:</strong> Temporarily Closed
+              <br />• <strong>Saturday:</strong> 9:00 AM – 6:00 PM
+              <br />• <strong>Sunday:</strong> 10:00 AM – 4:00 PM
+            </div>
+          </details>
+
+          <details class="us-faq__item">
+            <summary class="us-faq__q">
+              <span>How do I book an appointment?</span>
+              <span class="us-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="us-faq__a">
+              You can submit an appointment request using the form below, call or text us directly at <strong>0927-136-0441</strong>, or message our official Facebook page: <strong>O’Clear Dental</strong>.
+            </div>
+          </details>
+
+          <details class="us-faq__item">
+            <summary class="us-faq__q">
+              <span>Is orthodontic and dental treatment painful?</span>
+              <span class="us-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="us-faq__a">
+              Dr. Claire is known for her gentle touch and patient-first approach. We ensure every visit is comfortable and anxiety-free with gentle handling, thorough explanations, and modern equipment.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER TEN · APPOINTMENT REQUEST FORM (Urban Smiles Exact Layout) -->
+    <section class="us-booking" id="appointment">
+      <div class="shell us-booking-wrapper">
+        <div class="us-appointment-card">
+          <!-- Logo & Header -->
+          <img class="us-appointment-card__logo" src="images/logo.png" alt="O'Clear Dental Clinic" />
+          <h2 class="us-appointment-card__title">Appointment Request Form</h2>
+          <p class="us-appointment-card__notice">
+            Please be informed that this is not yet a confirmed booking. Our Patient Support Team will contact you to confirm your appointment. Thank you.
+          </p>
+
+          <form id="appointment-form" novalidate>
+            <!-- Anti-DDoS Honeypot Trap (invisible to humans, catches automated bots) -->
+            <input type="text" name="_clinic_hp_check" id="hp-trap" style="display:none !important; visibility:hidden !important;" tabindex="-1" autocomplete="off" />
+
+            <!-- 1. Name -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-name">
+                <span>Name<span class="req">*</span></span>
+                <span class="char-counter" id="name-counter">0/256</span>
+              </label>
+              <input type="text" id="req-name" name="name" class="us-input" required maxlength="256" placeholder="Your full name" />
+            </div>
+
+            <!-- 2. Age -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-age">
+                <span>Age<span class="req">*</span></span>
+              </label>
+              <input type="number" id="req-age" name="age" class="us-input" required min="1" max="120" placeholder="e.g. 28" />
+            </div>
+
+            <!-- 3. Email -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-email">
+                <span>Email<span class="req">*</span></span>
+              </label>
+              <input type="email" id="req-email" name="email" class="us-input" required placeholder="name@example.com" />
+            </div>
+
+            <!-- 4. Contact Number -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-phone">
+                <span>Contact Number<span class="req">*</span></span>
+              </label>
+              <input type="tel" id="req-phone" name="phone" class="us-input" required placeholder="09XX-XXX-XXXX" />
+            </div>
+
+            <!-- 5. Connected to -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-connection">
+                <span>Contact number is connected to:</span>
+              </label>
+              <select id="req-connection" name="connected_to" class="us-select">
+                <option value="" disabled selected>Select an option</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Viber">Viber</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Regular Mobile / SMS">Regular Mobile / SMS</option>
+              </select>
+            </div>
+
+            <!-- 6. Procedure -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-procedure">
+                <span>Procedure<span class="req">*</span></span>
+              </label>
+              <select id="req-procedure" name="procedure" class="us-select" required>
+                <option value="" disabled selected>Select procedure</option>
+                <option value="General Dental Consultation">General Dental Consultation</option>
+                <option value="General Dentistry & Cleaning">General Dentistry & Cleaning</option>
+                <option value="Orthodontics & Tooth Alignment">Orthodontics & Tooth Alignment</option>
+                <option value="Clear Aligners">Clear Aligners</option>
+                <option value="In-Chair Teeth Whitening">In-Chair Teeth Whitening</option>
+                <option value="Porcelain Veneers & Makeovers">Porcelain Veneers & Makeovers</option>
+                <option value="Restorations & Tooth Preservation">Restorations & Tooth Preservation</option>
+                <option value="Tooth Extraction & Minor Surgery">Tooth Extraction & Minor Surgery</option>
+              </select>
+            </div>
+
+            <!-- 7. Preferred Date -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-date">
+                <span>Preferred Date<span class="req">*</span></span>
+              </label>
+              <input type="date" id="req-date" name="date" class="us-input" required />
+            </div>
+
+            <!-- 8. Preferred Branch (1 branch only as requested) -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-branch">
+                <span>Preferred Branch<span class="req">*</span></span>
+              </label>
+              <select id="req-branch" name="branch" class="us-select" required>
+                <option value="O’Clear Dental Clinic — Main Clinic (Arayat, Pampanga)" selected>
+                  O’Clear Dental Clinic — Main Clinic (Arayat, Pampanga)
+                </option>
+              </select>
+            </div>
+
+            <!-- 9. Dental Insurance / HMO -->
+            <div class="us-form-group">
+              <label class="us-form-label" for="req-hmo">
+                <span>With Dental Insurance / HMO</span>
+              </label>
+              <select id="req-hmo" name="hmo" class="us-select">
+                <option value="" disabled selected>Select option</option>
+                <option value="None / Self-pay">None / Self-pay</option>
+                <option value="Medicard">Medicard</option>
+                <option value="Maxicare">Maxicare</option>
+                <option value="Intellicare">Intellicare</option>
+                <option value="PhilCare">PhilCare</option>
+                <option value="Other Dental Insurance / HMO">Other Dental Insurance / HMO</option>
+              </select>
+            </div>
+
+            <!-- 10. Upload Photos / Xray / Dental Records -->
+            <div class="us-form-group">
+              <label class="us-form-label">
+                <span>Upload Photos / Xray / Dental Records</span>
+              </label>
+              <div class="us-upload-zone" id="upload-zone">
+                <input type="file" id="file-upload" name="dental_records" accept="image/*,.pdf,.doc,.docx" />
+                <span class="us-upload-icon" aria-hidden="true">⇪</span>
+                <p class="us-upload-text">
+                  <strong>Choose a file to upload</strong> or drag and drop here
+                </p>
+                <div class="us-upload-filename" id="file-name-display"></div>
+              </div>
+            </div>
+
+            <!-- 11. reCAPTCHA Anti-Bot & DDoS Protection Widget -->
+            <div class="us-recaptcha-card" id="recaptcha-widget">
+              <div class="us-recaptcha-left">
+                <div class="us-recaptcha-checkbox" id="captcha-box" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="us-recaptcha-spinner" id="captcha-spinner"></div>
+                  <span id="captcha-check" style="display:none; font-weight:bold; font-size:16px;">✓</span>
+                </div>
+                <label class="us-recaptcha-label" for="captcha-box" id="captcha-text">I'm not a robot</label>
+              </div>
+              <div class="us-recaptcha-brand">
+                <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+                  <path d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4Z" fill="#1A73E8"/>
+                  <path d="M24 10C16.27 10 10 16.27 10 24C10 31.73 16.27 38 24 38C31.73 38 38 31.73 38 24C38 16.27 31.73 10 24 10Z" fill="#ffffff"/>
+                  <path d="M24 14V24L32 28" stroke="#1A73E8" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <small>reCAPTCHA<br />Privacy - Terms</small>
+              </div>
+            </div>
+
+            <!-- 12. Submit Button -->
+            <div class="us-form-submit-row">
+              <button type="submit" class="btn-form-submit" id="submit-btn">
+                Submit
+              </button>
+            </div>
+
+            <!-- Status message container -->
+            <div class="us-form-status" id="form-status" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="us-footer" role="contentinfo">
+    <div class="shell us-footer__grid">
+      <div class="us-footer__brand">
+        <a href="#hero" class="us-brand">
+          <img class="us-brand__logo" src="images/logo.png" alt="O'Clear Dental Logo" width="48" height="48" />
+          <div class="us-brand__text">
+            <span class="us-brand__title">O’CLEAR DENTAL</span>
+            <span class="us-brand__tag">Your smile, made clear.</span>
+          </div>
+        </a>
+        <p class="us-footer__brand-copy">
+          Thoughtful dental care that puts your comfort first. General dentistry and practicing orthodontics by Dr. Claire Ann T. Cordova.
+        </p>
+      </div>
+
+      <div class="us-footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#doctor">Dr. Claire</a></li>
+          <li><a href="#services">Disciplines of Care</a></li>
+          <li><a href="#clinic">Our Clinic</a></li>
+          <li><a href="#location">Schedule & Location</a></li>
+          <li><a href="#promise">Our Patient Promise</a></li>
+        </ul>
+      </div>
+
+      <div class="us-footer__col">
+        <h5>Disciplines</h5>
+        <ul>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Clear Aligners</a></li>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Oral Prophylaxis</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="login.html">Staff Portal Login</a></li>
+        </ul>
+      </div>
+
+      <div class="us-footer__col us-footer__concierge">
+        <h5>Contact & Schedule</h5>
+        <p><strong>Phone:</strong> <br /><a href="tel:09271360441" style="color: #9ec9f2; font-weight: 700; font-size: 15px;">0927-136-0441</a></p>
+        <p><strong>Facebook:</strong> <br /><a href="https://facebook.com" target="_blank" rel="noopener" style="color: #9ec9f2;">O’Clear Dental</a></p>
+        <p><strong>Hours:</strong> <br />
+          Mon – Thu: 9:00 AM – 6:00 PM<br />
+          <span style="color: #f7a69b;">Fri: Temporarily Closed</span><br />
+          Sat: 9:00 AM – 6:00 PM<br />
+          Sun: 10:00 AM – 4:00 PM
+        </p>
+      </div>
+    </div>
+
+    <div class="shell us-footer__bar">
+      <div>© 2026 O’Clear Dental Clinic. Your smile, made clear. All rights reserved.</div>
+      <div>
+        <a href="login.html" style="color: #9ec9f2; margin-right: 18px;">Staff Portal</a>
+        <a href="#hero">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="api-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
