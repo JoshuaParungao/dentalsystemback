@@ -1,0 +1,14 @@
+[
+  {
+    "id": "usr-01",
+    "username": "claire",
+    "password": "claire",
+    "fullName": "Dr. Claire Ann T. Cordova",
+    "role": "Owner / Lead Dentist",
+    "email": "drclaire@ocleardental.com",
+    "phone": "0927-136-0441",
+    "status": "Active",
+    "createdAt": "2026-09-28T00:00:00.000Z",
+    "lastLogin": "2026-09-28T12:20:00.000Z"
+  }
+]

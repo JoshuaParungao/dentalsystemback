@@ -40,10 +40,11 @@
         <a class="nav-item" href="#" data-tab="billing"><span>💳</span>Sales & Billing</a>
         <a class="nav-item" href="#" data-tab="inventory"><span>▤</span>Inventory & Stocks</a>
         <a class="nav-item" href="#" data-tab="settings"><span>⚙</span>API & SMS Settings</a>
+        <a class="nav-item" href="#" data-tab="users"><span>👥</span>User Control & Security</a>
         <p class="sidebar-label">Public Website</p>
         <a href="index.html"><span>↗</span>View Live Site</a>
       </nav>
-      <a class="sidebar-logout" href="login.html">↪ Sign out</a>
+      <a class="sidebar-logout" href="#" onclick="handleLogout(event)">↪ Sign out</a>
     </aside>
 
     <!-- MAIN CONTENT AREA -->
@@ -54,9 +55,14 @@
           <p class="eyebrow" id="header-date"><span></span> O’Clear Dental Clinic — Staff Portal</p>
           <h1 id="header-title">Good morning, Dr. Claire.</h1>
         </div>
-        <div class="profile">
-          <span class="profile-avatar">CA</span>
-          <span><strong>Dr. Claire Cordova</strong><small>Lead Dentist / Orthodontics</small></span>
+        <div class="profile" style="display: flex; align-items: center; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="switchTab('users')" title="User Control & Security">
+            <span class="profile-avatar" id="header-avatar">CA</span>
+            <span><strong id="header-username">Dr. Claire Cordova</strong><small id="header-role">Owner / Lead Dentist</small></span>
+          </div>
+          <button class="btn-sm-action" style="padding: 6px 12px; font-size: 11.5px; border-radius: 6px; white-space: nowrap;" onclick="switchTab('users')" title="Change Password">
+            🔑 Password
+          </button>
         </div>
       </header>
 
@@ -657,6 +663,128 @@
               </div>
               <div id="backend-test-msg" style="font-size: 12px; font-weight: 600; display: none; margin-top: 6px;"></div>
             </section>
+          </div>
+        <!-- ==========================================
+             VIEW 8: USER CONTROL & ACCOUNT SECURITY TAB (ARUNAFELTZ LOGIC)
+             ========================================== -->
+        <div class="dashboard-view" id="view-users">
+          <div class="catalog-header-row">
+            <div>
+              <p class="eyebrow"><span></span> Access & Authentication</p>
+              <h2>User Control & Account Security</h2>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+                Pamahalaan ang clinic staff accounts at palitan ang inyong password nang ligtas.
+              </p>
+            </div>
+            <button class="btn-sm-action primary" style="padding: 10px 20px; font-size: 13px;" onclick="openModal('modal-add-user')">
+              + Add New Staff Account
+            </button>
+          </div>
+
+          <div class="dashboard-columns" style="margin-bottom: 24px;">
+            <!-- Left Panel: Change Password (Arunafeltz Logic) -->
+            <section class="panel" style="border-top: 3.5px solid #08094b;">
+              <div class="panel-heading">
+                <div>
+                  <h3 style="font-size: 16px;">🔑 Change Account Password</h3>
+                  <p style="font-size: 12.5px; color: var(--text-muted);">Current user: <strong id="cp-current-user" style="color: #08094b;">claire</strong> (Owner / Lead Dentist)</p>
+                </div>
+                <span class="patient-badge badge-confirmed">Security Active</span>
+              </div>
+
+              <!-- Feedback message alert banner -->
+              <div id="cp-alert-msg" style="display: none; padding: 10px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 16px; line-height: 1.4;"></div>
+
+              <form id="change-password-form" onsubmit="handleChangePasswordSubmit(event)">
+                <div style="margin-bottom: 14px;">
+                  <label class="modal-label">Current Password *</label>
+                  <div style="position: relative;">
+                    <input type="password" id="cp-current-pw" class="modal-input" required placeholder="Enter current password (default: claire)" />
+                    <button type="button" onclick="togglePasswordVisibility('cp-current-pw', this)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 12px; color: #2b4bb5; cursor: pointer; padding: 4px;">Show 👁</button>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 14px;">
+                  <label class="modal-label">New Password * (at least 4 characters)</label>
+                  <div style="position: relative;">
+                    <input type="password" id="cp-new-pw" class="modal-input" required minlength="4" placeholder="Enter your new password" />
+                    <button type="button" onclick="togglePasswordVisibility('cp-new-pw', this)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 12px; color: #2b4bb5; cursor: pointer; padding: 4px;">Show 👁</button>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 18px;">
+                  <label class="modal-label">Confirm New Password *</label>
+                  <div style="position: relative;">
+                    <input type="password" id="cp-confirm-pw" class="modal-input" required minlength="4" placeholder="Re-type new password to confirm" />
+                    <button type="button" onclick="togglePasswordVisibility('cp-confirm-pw', this)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 12px; color: #2b4bb5; cursor: pointer; padding: 4px;">Show 👁</button>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-sm-action primary" id="cp-submit-btn" style="width: 100%; padding: 12px; font-size: 14px; font-weight: 600; justify-content: center;">
+                  Update Password 🔒
+                </button>
+              </form>
+            </section>
+
+            <!-- Right Panel: Clinic Role Matrix -->
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <h3 style="font-size: 16px;">🛡️ Role & Permissions Matrix</h3>
+                  <p style="font-size: 12.5px; color: var(--text-muted);">Access tiering across O'Clear Dental Clinic</p>
+                </div>
+              </div>
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px; border-left: 3.5px solid #08094b;">
+                  <strong style="color: #08094b; font-size: 13.5px;">👑 Owner / Lead Dentist (Dr. Claire)</strong>
+                  <div style="font-size: 12px; color: #475569; margin-top: 2px;">
+                    Full clinical and administrative control: Appointments, Patient Catalog, Interactive Tooth Chart, Prescriptions (Rx), Billing & Sales, Inventory, and Staff User Management.
+                  </div>
+                </div>
+                <div style="padding: 12px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px; border-left: 3.5px solid #1967d2;">
+                  <strong style="color: #1967d2; font-size: 13.5px;">💼 Receptionist & Front Desk Staff</strong>
+                  <div style="font-size: 12px; color: #475569; margin-top: 2px;">
+                    Frontline access: Online appointment requests, Semaphore SMS confirmations, patient intake, invoice generation, and supply recording.
+                  </div>
+                </div>
+                <div style="padding: 12px; background: #f8fafc; border-radius: 8px; border-left: 3.5px solid #137333;">
+                  <strong style="color: #137333; font-size: 13.5px;">🩺 Dental Assistant</strong>
+                  <div style="font-size: 12px; color: #475569; margin-top: 2px;">
+                    Chairside assistance, views patient dental chart, updates treatment step progression, and logs stock withdrawals.
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- User Accounts Table -->
+          <div class="catalog-card">
+            <div class="panel-heading" style="margin-bottom: 14px;">
+              <div>
+                <h3 style="font-size: 16px;">Clinic Accounts Directory</h3>
+                <p style="font-size: 12.5px; color: var(--text-muted);">List of all authorized clinic personnel with dashboard access</p>
+              </div>
+              <button class="btn-sm-action" onclick="loadUsersTable()">Refresh Directory ↻</button>
+            </div>
+            <div class="catalog-table-wrap">
+              <table class="catalog-table">
+                <thead>
+                  <tr>
+                    <th>User ID</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Assigned Role</th>
+                    <th>Email / Phone</th>
+                    <th>Status</th>
+                    <th>Last Login</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="users-table-tbody">
+                  <!-- Populated via JS -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -1674,6 +1802,60 @@
             This dental prescription is valid within the Philippines. Keep medications out of reach of children.
           </div>
         </div>
+      </div>
+    <!-- ==========================================
+         MODAL: ADD NEW CLINIC STAFF USER ACCOUNT
+         ========================================== -->
+    <div class="modal-overlay" id="modal-add-user">
+      <div class="modal-card" style="max-width: 520px;">
+        <div class="modal-header">
+          <h3 class="modal-title">Create New Staff User Account</h3>
+          <button class="modal-close" onclick="closeModal('modal-add-user')">×</button>
+        </div>
+        <form id="add-user-form" onsubmit="handleAddNewUserSubmit(event)">
+          <div style="margin-bottom: 14px;">
+            <label class="modal-label">Full Name *</label>
+            <input type="text" id="new-user-fullname" class="modal-input" required placeholder="e.g. Maria Perez" />
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 14px;">
+            <div>
+              <label class="modal-label">Username * (login handle)</label>
+              <input type="text" id="new-user-username" class="modal-input" required placeholder="e.g. maria" />
+            </div>
+            <div>
+              <label class="modal-label">Initial Password *</label>
+              <input type="password" id="new-user-password" class="modal-input" required minlength="4" placeholder="Min. 4 characters" />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label class="modal-label">Assigned Clinic Role *</label>
+            <select id="new-user-role" class="modal-select" required>
+              <option value="Staff / Receptionist" selected>💼 Receptionist & Front Desk Staff</option>
+              <option value="Dental Assistant">🩺 Dental Assistant</option>
+              <option value="Associate Dentist">🦷 Associate Dentist</option>
+            </select>
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 18px;">
+            <div>
+              <label class="modal-label">Email (Optional)</label>
+              <input type="email" id="new-user-email" class="modal-input" placeholder="staff@ocleardental.com" />
+            </div>
+            <div>
+              <label class="modal-label">Mobile Number (Optional)</label>
+              <input type="tel" id="new-user-phone" class="modal-input" placeholder="09XX-XXX-XXXX" />
+            </div>
+          </div>
+
+          <div id="add-user-msg" style="display: none; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 14px;"></div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-sm-action" onclick="closeModal('modal-add-user')">Cancel</button>
+            <button type="submit" class="btn-sm-action primary" id="btn-save-new-user">+ Create Account ✓</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -3933,9 +4115,321 @@
         });
       });
 
+      // ==========================================
+      // USER AUTHENTICATION & ARUNAFELTZ PASSWORD LOGIC
+      // ==========================================
+
+      // 1. Session & Route Guard
+      function checkAuthSession() {
+        const stored = localStorage.getItem('oclear_user');
+        if (!stored) {
+          // Default to Claire if accessing directly during initial setup, or prompt login
+          const defaultUser = {
+            id: "usr-01",
+            username: "claire",
+            fullName: "Dr. Claire Ann T. Cordova",
+            role: "Owner / Lead Dentist",
+            email: "drclaire@ocleardental.com"
+          };
+          localStorage.setItem('oclear_user', JSON.stringify(defaultUser));
+        }
+        try {
+          const user = JSON.parse(localStorage.getItem('oclear_user') || '{}');
+          const headerName = document.getElementById('header-username');
+          const headerRole = document.getElementById('header-role');
+          const headerAvatar = document.getElementById('header-avatar');
+          const cpUser = document.getElementById('cp-current-user');
+
+          if (headerName && user.fullName) headerName.textContent = user.fullName;
+          if (headerRole && user.role) headerRole.textContent = user.role;
+          if (headerAvatar && user.fullName) {
+            const initials = user.fullName.split(' ').map(n => n[0]).filter(Boolean).slice(0, 2).join('').toUpperCase();
+            headerAvatar.textContent = initials || 'CA';
+          }
+          if (cpUser && user.username) {
+            cpUser.textContent = `${user.username} (${user.fullName || user.role})`;
+          }
+          return user;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      // Logout handler
+      window.handleLogout = function(e) {
+        if (e) e.preventDefault();
+        if (confirm("Sigurado ka bang nais mong mag-sign out sa clinic dashboard?")) {
+          localStorage.removeItem('oclear_user');
+          localStorage.removeItem('oclear_token');
+          window.location.href = 'login.html';
+        }
+      };
+
+      // Toggle password visibility
+      window.togglePasswordVisibility = function(inputId, btn) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+        if (input.type === 'password') {
+          input.type = 'text';
+          if (btn) btn.textContent = 'Hide 🙈';
+        } else {
+          input.type = 'password';
+          if (btn) btn.textContent = 'Show 👁';
+        }
+      };
+
+      // 2. Load Users Directory Table
+      let usersData = [];
+      async function loadUsersTable() {
+        const tbody = document.getElementById('users-table-tbody');
+        if (!tbody) return;
+
+        try {
+          const res = await fetch(`${getApiBaseUrl()}/api/users`).then(r => r.json());
+          if (Array.isArray(res)) {
+            usersData = res;
+          } else {
+            usersData = [{
+              id: "usr-01",
+              username: "claire",
+              fullName: "Dr. Claire Ann T. Cordova",
+              role: "Owner / Lead Dentist",
+              email: "drclaire@ocleardental.com",
+              phone: "0927-136-0441",
+              status: "Active",
+              lastLogin: "Active"
+            }];
+          }
+        } catch (err) {
+          usersData = [{
+            id: "usr-01",
+            username: "claire",
+            fullName: "Dr. Claire Ann T. Cordova",
+            role: "Owner / Lead Dentist",
+            email: "drclaire@ocleardental.com",
+            phone: "0927-136-0441",
+            status: "Active",
+            lastLogin: "Active"
+          }];
+        }
+
+        renderUsersTable();
+      }
+
+      function renderUsersTable() {
+        const tbody = document.getElementById('users-table-tbody');
+        if (!tbody) return;
+
+        if (!usersData.length) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 24px; color: #8896a6;">No user accounts found.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = usersData.map(u => `
+          <tr>
+            <td><code style="font-size: 11px; font-weight: 700; color: #08094b;">${escapeHtml(u.id)}</code></td>
+            <td><strong>${escapeHtml(u.fullName)}</strong></td>
+            <td><code style="font-size: 12px; color: #1967d2; font-weight: 600;">@${escapeHtml(u.username)}</code></td>
+            <td>
+              <span class="patient-badge ${u.role && u.role.includes('Owner') ? 'badge-confirmed' : 'badge-active'}">
+                ${escapeHtml(u.role || 'Staff')}
+              </span>
+            </td>
+            <td>
+              <div style="font-size: 12.5px;">${escapeHtml(u.email || '—')}</div>
+              <small style="color: #64748b;">${escapeHtml(u.phone || '—')}</small>
+            </td>
+            <td>
+              <span class="patient-badge badge-${u.status === 'Active' ? 'in-treatment' : 'inactive'}">
+                ${u.status || 'Active'}
+              </span>
+            </td>
+            <td style="font-size: 12px; color: #64748b;">
+              ${u.lastLogin ? new Date(u.lastLogin).toLocaleString() : 'Active session'}
+            </td>
+            <td>
+              ${u.username === 'claire' || u.id === 'usr-01' ? `
+                <span style="font-size: 11px; color: #08094b; font-weight: bold; background: #eef2ff; padding: 4px 8px; border-radius: 4px;">Primary Owner</span>
+              ` : `
+                <button class="btn-sm-action danger" style="padding: 4px 8px; font-size: 11px;" onclick="deleteUserAccount('${u.id}', '${escapeHtml(u.fullName)}')">Remove 🗑</button>
+              `}
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      // 3. Change Password Form (Arunafeltz logic)
+      window.handleChangePasswordSubmit = async function(e) {
+        e.preventDefault();
+        const alertBox = document.getElementById('cp-alert-msg');
+        const submitBtn = document.getElementById('cp-submit-btn');
+        const curPw = document.getElementById('cp-current-pw').value;
+        const newPw = document.getElementById('cp-new-pw').value;
+        const confPw = document.getElementById('cp-confirm-pw').value;
+
+        // Get currently logged-in user
+        let currentUser = null;
+        try {
+          currentUser = JSON.parse(localStorage.getItem('oclear_user'));
+        } catch (err) {}
+        const username = currentUser ? currentUser.username : 'claire';
+
+        if (alertBox) alertBox.style.display = 'none';
+
+        if (newPw !== confPw) {
+          if (alertBox) {
+            alertBox.style.display = 'block';
+            alertBox.style.background = '#fdeded';
+            alertBox.style.color = '#5f2120';
+            alertBox.style.border = '1px solid #ffcdd2';
+            alertBox.textContent = '✗ Hindi nagtutugma ang New Password at Confirm Password!';
+          }
+          return;
+        }
+
+        if (newPw.length < 4) {
+          if (alertBox) {
+            alertBox.style.display = 'block';
+            alertBox.style.background = '#fdeded';
+            alertBox.style.color = '#5f2120';
+            alertBox.style.border = '1px solid #ffcdd2';
+            alertBox.textContent = '✗ Ang New Password ay dapat mayroong hindi bababa sa 4 characters!';
+          }
+          return;
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Updating Password...';
+        }
+
+        try {
+          const res = await fetch(`${getApiBaseUrl()}/api/users/change-password`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: username,
+              currentPassword: curPw,
+              newPassword: newPw,
+              confirmPassword: confPw
+            })
+          });
+
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            if (alertBox) {
+              alertBox.style.display = 'block';
+              alertBox.style.background = '#edf7ed';
+              alertBox.style.color = '#1e4620';
+              alertBox.style.border = '1px solid #c8e6c9';
+              alertBox.textContent = '✓ Tagumpay! Na-update na ang inyong password.';
+            }
+            document.getElementById('change-password-form').reset();
+          } else {
+            if (alertBox) {
+              alertBox.style.display = 'block';
+              alertBox.style.background = '#fdeded';
+              alertBox.style.color = '#5f2120';
+              alertBox.style.border = '1px solid #ffcdd2';
+              alertBox.textContent = `✗ ${data.error || 'Mali ang kasalukuyang password. Pakisubukang muli.'}`;
+            }
+          }
+        } catch (err) {
+          if (alertBox) {
+            alertBox.style.display = 'block';
+            alertBox.style.background = '#fdeded';
+            alertBox.style.color = '#5f2120';
+            alertBox.style.border = '1px solid #ffcdd2';
+            alertBox.textContent = `✗ Error sa pagkonekta: ${err.message}`;
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Update Password 🔒';
+          }
+        }
+      };
+
+      // 4. Add New Staff User Account
+      window.handleAddNewUserSubmit = async function(e) {
+        e.preventDefault();
+        const msg = document.getElementById('add-user-msg');
+        const btn = document.getElementById('btn-save-new-user');
+
+        const fullName = document.getElementById('new-user-fullname').value.trim();
+        const username = document.getElementById('new-user-username').value.trim().toLowerCase();
+        const password = document.getElementById('new-user-password').value;
+        const role = document.getElementById('new-user-role').value;
+        const email = document.getElementById('new-user-email').value.trim();
+        const phone = document.getElementById('new-user-phone').value.trim();
+
+        if (msg) msg.style.display = 'none';
+        if (btn) { btn.disabled = true; btn.textContent = 'Creating...'; }
+
+        try {
+          const res = await fetch(`${getApiBaseUrl()}/api/users`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullName, username, password, role, email, phone })
+          });
+
+          const data = await res.json();
+          if (res.ok && data.success) {
+            if (msg) {
+              msg.style.display = 'block';
+              msg.style.background = '#edf7ed';
+              msg.style.color = '#1e4620';
+              msg.textContent = '✓ Bagong staff user account ay matagumpay na nagawa!';
+            }
+            document.getElementById('add-user-form').reset();
+            setTimeout(() => {
+              closeModal('modal-add-user');
+              loadUsersTable();
+            }, 900);
+          } else {
+            if (msg) {
+              msg.style.display = 'block';
+              msg.style.background = '#fdeded';
+              msg.style.color = '#5f2120';
+              msg.textContent = `✗ ${data.error || 'Hindi magawa ang account.'}`;
+            }
+          }
+        } catch (err) {
+          if (msg) {
+            msg.style.display = 'block';
+            msg.style.background = '#fdeded';
+            msg.style.color = '#5f2120';
+            msg.textContent = `✗ Connection error: ${err.message}`;
+          }
+        } finally {
+          if (btn) { btn.disabled = false; btn.textContent = '+ Create Account ✓'; }
+        }
+      };
+
+      // 5. Delete User Account
+      window.deleteUserAccount = async function(id, name) {
+        if (!confirm(`Sigurado ka bang nais mong tanggalin ang account ni "${name}"?`)) return;
+
+        try {
+          const res = await fetch(`${getApiBaseUrl()}/api/users/${id}`, { method: 'DELETE' });
+          const data = await res.json();
+          if (res.ok && data.success) {
+            alert('✓ Account successfully removed.');
+            loadUsersTable();
+          } else {
+            alert(`✗ ${data.error || 'Hindi ma-delete ang user.'}`);
+          }
+        } catch (err) {
+          alert(`✗ Connection error: ${err.message}`);
+        }
+      };
+
       // Initial Load
+      checkAuthSession();
       initBackendSettingInput();
       loadAllData();
+      loadUsersTable();
     </script>
   </body>
 </html>

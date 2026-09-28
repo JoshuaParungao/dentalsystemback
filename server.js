@@ -24,6 +24,7 @@ const PATIENTS_FILE = path.join(DATA_DIR, 'patients.json');
 const SERVICES_FILE = path.join(DATA_DIR, 'services.json');
 const INVENTORY_FILE = path.join(DATA_DIR, 'inventory.json');
 const BILLING_FILE = path.join(DATA_DIR, 'billing.json');
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
 
 // Ensure Config File Exists
 function getClinicConfig() {
@@ -82,6 +83,21 @@ const initialBilling = [
   { id: "INV-2026-003", patient_name: "Jose Dela Cruz", phone: "0928-888-4321", procedure: "Orthodontic Bracket Adjustment", date: "2026-09-28", total_amount: 1500, discount: 0, hmo_coverage: 0, amount_paid: 1500, balance: 0, payment_method: "Cash", status: "Paid", notes: "Routine monthly adjustment.", created_at: "2026-09-28T11:45:00Z" }
 ];
 
+const initialUsers = [
+  {
+    id: "usr-01",
+    username: "claire",
+    password: "claire",
+    fullName: "Dr. Claire Ann T. Cordova",
+    role: "Owner / Lead Dentist",
+    email: "drclaire@ocleardental.com",
+    phone: "0927-136-0441",
+    status: "Active",
+    createdAt: new Date().toISOString(),
+    lastLogin: null
+  }
+];
+
 function initJsonFile(filePath, initialData) {
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, JSON.stringify(initialData, null, 2), 'utf-8');
@@ -93,6 +109,7 @@ initJsonFile(PATIENTS_FILE, initialPatients);
 initJsonFile(SERVICES_FILE, initialServices);
 initJsonFile(INVENTORY_FILE, initialInventory);
 initJsonFile(BILLING_FILE, initialBilling);
+initJsonFile(USERS_FILE, initialUsers);
 
 function readJson(filePath) {
   try {
@@ -981,6 +998,215 @@ const server = http.createServer((req, res) => {
       resendFrom: config.RESEND_FROM_EMAIL,
       hasPayMongoKey: Boolean(config.PAYMONGO_SECRET_KEY)
     }));
+    return;
+  }
+
+  // 12. POST /api/login (User authentication)
+  if (req.method === 'POST' && pathname === '/api/login') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const { username, password } = JSON.parse(body || '{}');
+        if (!username || !password) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Username and password are required.' }));
+          return;
+        }
+
+        const users = readJson(USERS_FILE);
+        const user = users.find(u => 
+          (u.username && u.username.toLowerCase() === username.trim().toLowerCase()) ||
+          (u.email && u.email.toLowerCase() === username.trim().toLowerCase())
+        );
+
+        if (!user || user.password !== password) {
+          res.writeHead(401, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Invalid username or password.' }));
+          return;
+        }
+
+        if (user.status === 'Inactive') {
+          res.writeHead(403, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'This account has been deactivated. Please contact Dr. Claire.' }));
+          return;
+        }
+
+        // Update last login timestamp
+        user.lastLogin = new Date().toISOString();
+        writeJson(USERS_FILE, users);
+
+        const safeUser = {
+          id: user.id,
+          username: user.username,
+          fullName: user.fullName,
+          role: user.role,
+          email: user.email || '',
+          phone: user.phone || ''
+        };
+
+        const token = crypto.randomBytes(24).toString('hex');
+        console.log(`[USER LOGIN] User logged in successfully: ${user.username} (${user.fullName})`);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          success: true,
+          message: `Welcome back, ${user.fullName}!`,
+          user: safeUser,
+          token: token
+        }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // 13. GET /api/users (List accounts)
+  if (req.method === 'GET' && pathname === '/api/users') {
+    const users = readJson(USERS_FILE);
+    const safeUsers = users.map(u => ({
+      id: u.id,
+      username: u.username,
+      fullName: u.fullName,
+      role: u.role,
+      email: u.email,
+      phone: u.phone,
+      status: u.status,
+      createdAt: u.createdAt,
+      lastLogin: u.lastLogin
+    }));
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(safeUsers));
+    return;
+  }
+
+  // 14. POST /api/users (Create new staff account)
+  if (req.method === 'POST' && pathname === '/api/users') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        const users = readJson(USERS_FILE);
+
+        if (!payload.username || !payload.password || !payload.fullName) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Username, password, and Full Name are required.' }));
+          return;
+        }
+
+        const existing = users.find(u => u.username.toLowerCase() === payload.username.trim().toLowerCase());
+        if (existing) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Username already exists. Please choose another.' }));
+          return;
+        }
+
+        const newUser = {
+          id: 'usr-' + Date.now().toString(36),
+          username: payload.username.trim().toLowerCase(),
+          password: payload.password,
+          fullName: payload.fullName.trim(),
+          role: payload.role || 'Staff / Receptionist',
+          email: payload.email ? payload.email.trim() : '',
+          phone: payload.phone ? payload.phone.trim() : '',
+          status: 'Active',
+          createdAt: new Date().toISOString(),
+          lastLogin: null
+        };
+
+        users.push(newUser);
+        writeJson(USERS_FILE, users);
+        console.log(`[USER CREATED] New user added: ${newUser.username} (${newUser.fullName})`);
+
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'New user account created successfully.', user: newUser }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // 15. POST /api/users/change-password (Arunafeltz logic: verify current password & change)
+  if (req.method === 'POST' && pathname === '/api/users/change-password') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const { username, currentPassword, newPassword, confirmPassword } = JSON.parse(body || '{}');
+
+        if (!username || !currentPassword || !newPassword) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Please provide current password and new password.' }));
+          return;
+        }
+
+        if (confirmPassword && newPassword !== confirmPassword) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'New password and confirm password do not match.' }));
+          return;
+        }
+
+        if (newPassword.length < 4) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'New password must be at least 4 characters long.' }));
+          return;
+        }
+
+        const users = readJson(USERS_FILE);
+        const user = users.find(u => u.username.toLowerCase() === username.trim().toLowerCase());
+
+        if (!user) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'User account not found.' }));
+          return;
+        }
+
+        if (user.password !== currentPassword) {
+          res.writeHead(401, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Incorrect current password. Please try again.' }));
+          return;
+        }
+
+        user.password = newPassword;
+        user.updatedAt = new Date().toISOString();
+        writeJson(USERS_FILE, users);
+
+        console.log(`[USER SECURITY] Password successfully updated for user: ${user.username}`);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'Password successfully updated!' }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // 16. DELETE /api/users/:id (Remove staff account)
+  if (req.method === 'DELETE' && pathname.startsWith('/api/users/')) {
+    const userId = pathname.replace('/api/users/', '').trim();
+    if (userId === 'usr-01' || userId === 'claire') {
+      res.writeHead(403, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Cannot delete the primary owner account (Dr. Claire).' }));
+      return;
+    }
+    let users = readJson(USERS_FILE);
+    const initialLen = users.length;
+    users = users.filter(u => u.id !== userId && u.username !== userId);
+    if (users.length === initialLen) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'User not found.' }));
+      return;
+    }
+    writeJson(USERS_FILE, users);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true, message: 'User deleted successfully.' }));
     return;
   }
 
