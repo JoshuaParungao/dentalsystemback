@@ -4,7 +4,6 @@
   "description": "O'Clear Dental Clinic - Web Portal, Patient Catalog, Treatment Tracker & Billing Management",
   "main": "server.js",
   "scripts": {
-    "build": "echo 'Frontend build ready'",
     "start": "node server.js",
     "dev": "node server.js"
   },
