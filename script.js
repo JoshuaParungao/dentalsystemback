@@ -396,5 +396,116 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // 8. Dynamic Services Loader from /api/services (Synchronized with Dashboard Catalog)
+  async function loadPublicServices() {
+    const grid = document.getElementById("public-services-grid");
+    const procSelect = document.getElementById("req-procedure");
+    const apiBase = (typeof window.API_BASE !== 'undefined' ? window.API_BASE : '').replace(/\/$/, '');
+
+    // Function to render services into the DOM
+    const renderActiveServices = (services) => {
+      if (!Array.isArray(services) || services.length === 0) return;
+      const activeServices = services.filter(s => s.active !== false);
+      if (activeServices.length === 0) return;
+
+      // 1. Render Public Services Grid dynamically
+      if (grid) {
+        const icons = ["♧", "✦", "⚕", "⚙", "⌁", "▱", "◌", "🩺", "⚡"];
+        grid.innerHTML = activeServices.map((s, index) => {
+          const icon = icons[index % icons.length];
+          const code = s.code || `${(index + 1).toString().padStart(2, '0')} / ${activeServices.length.toString().padStart(2, '0')}`;
+          return `
+            <article class="us-service-card">
+              <div>
+                <div class="us-service-card__top">
+                  <span class="us-service-card__num">${code}</span>
+                  <span class="us-service-card__icon">${icon}</span>
+                </div>
+                <h3 class="us-service-card__title">${escapeHtml(s.name)}</h3>
+                <p class="us-service-card__desc">${escapeHtml(s.desc || '')}</p>
+                ${s.fee ? `<div style="font-size: 13px; font-weight: 700; color: var(--navy); margin-top: 10px;">${escapeHtml(s.fee)}</div>` : ''}
+              </div>
+              <div class="us-service-card__footer">
+                <a href="#appointment" data-procedure="${escapeHtml(s.name)}" class="us-service-card__link">
+                  Book Treatment <span>→</span>
+                </a>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        // Re-attach click listeners to the dynamic service card links
+        grid.querySelectorAll(".us-service-card__link").forEach(link => {
+          link.addEventListener("click", (e) => {
+            const procedureVal = link.getAttribute("data-procedure");
+            const selectEl = document.getElementById('req-procedure');
+            const appointmentSec = document.getElementById('appointment');
+
+            if (selectEl && procedureVal) {
+              selectEl.value = procedureVal;
+              selectEl.style.borderColor = 'var(--sapphire-light)';
+              selectEl.style.boxShadow = '0 0 0 4px rgba(43, 75, 181, 0.25)';
+              setTimeout(() => {
+                selectEl.style.borderColor = '';
+                selectEl.style.boxShadow = '';
+              }, 2200);
+            }
+
+            if (appointmentSec) {
+              const headerEl = document.getElementById('header');
+              const headerHeight = headerEl ? headerEl.offsetHeight : 86;
+              const targetPos = appointmentSec.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+              window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+          });
+        });
+      }
+
+      // 2. Populate Procedure Dropdown in Booking Form dynamically
+      if (procSelect) {
+        const currentVal = procSelect.value;
+        procSelect.innerHTML = `<option value="" disabled ${!currentVal ? 'selected' : ''}>Select procedure</option>` +
+          activeServices.map(s => `
+            <option value="${escapeHtml(s.name)}" ${currentVal === s.name ? 'selected' : ''}>
+              ${escapeHtml(s.name)} ${s.fee ? `(${escapeHtml(s.fee)})` : ''}
+            </option>
+          `).join('');
+      }
+    };
+
+    // First, check local cache for instant zero-flicker display
+    try {
+      const cached = JSON.parse(localStorage.getItem('oclear_services') || 'null');
+      if (cached && Array.isArray(cached) && cached.length > 0) {
+        renderActiveServices(cached);
+      }
+    } catch (_) {}
+
+    // Next, fetch latest live data from server with cache-busting
+    try {
+      const res = await fetch(`${apiBase}/api/services?_t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) return;
+      const services = await res.json();
+      if (Array.isArray(services) && services.length > 0) {
+        localStorage.setItem('oclear_services', JSON.stringify(services));
+        renderActiveServices(services);
+      }
+    } catch (e) {
+      console.warn("Could not load dynamic services from API, using cached data:", e);
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // Load live services on startup
+  loadPublicServices();
 });
 

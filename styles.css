@@ -1925,6 +1925,15 @@ button {
   flex-direction: column;
   flex-shrink: 0;
 }
+.sidebar-backdrop {
+  display: none;
+}
+.sidebar-close-btn {
+  display: none;
+}
+body.sidebar-locked {
+  overflow: hidden !important;
+}
 .dashboard-sidebar .brand {
   padding: 0 13px;
   color: #08094b;
@@ -3141,24 +3150,83 @@ img, svg, video, canvas, iframe {
     overflow-x: hidden;
   }
 
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 9, 75, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+    opacity: 1;
+  }
+
   .dashboard-sidebar {
     position: fixed !important;
     top: 0 !important;
-    left: -290px !important;
-    width: 280px !important;
+    left: -300px !important;
+    width: 285px !important;
     height: 100vh !important;
     height: 100dvh !important;
     z-index: 999 !important;
     background: #08094b !important;
-    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.25) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s ease !important;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.45) !important;
+    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
+    padding: 24px 18px !important;
   }
 
   .dashboard-sidebar.open {
     left: 0 !important;
-    transform: translateX(0) !important;
+  }
+
+  .dashboard-sidebar .brand {
+    color: #ffffff !important;
+  }
+
+  .dashboard-sidebar .brand small {
+    color: #a7d7ed !important;
+  }
+
+  .dashboard-sidebar .sidebar-label {
+    color: #8da4be !important;
+  }
+
+  .dashboard-sidebar .dashboard-nav a {
+    color: #dbe7f2 !important;
+    font-size: 13.5px !important;
+    padding: 12px 14px !important;
+  }
+
+  .dashboard-sidebar .dashboard-nav a:hover,
+  .dashboard-sidebar .dashboard-nav a.selected {
+    background: #171b70 !important;
+    color: #ffffff !important;
+  }
+
+  .sidebar-close-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .sidebar-close-btn:hover {
+    background: rgba(255, 255, 255, 0.28) !important;
   }
 
   .dashboard-main {
@@ -3250,6 +3318,113 @@ img, svg, video, canvas, iframe {
   .us-faq__inner {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
+  }
+}
+
+/* ==========================================================================
+   STAFF LOGIN RESPONSIVE ADAPTATION (max-width: 860px)
+   Native phone card styling, single column, touch-friendly 48px+ inputs
+   ========================================================================== */
+@media (max-width: 860px) {
+  .portal-page {
+    background: #08094b !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 14px 36px !important;
+  }
+
+  .login-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .login-brand-panel {
+    padding: 24px 20px 20px !important;
+    background: linear-gradient(150deg, #060738 0%, #101469 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    gap: 12px !important;
+    text-align: left !important;
+  }
+
+  .login-brand-panel .brand {
+    margin-bottom: 4px !important;
+  }
+
+  .login-brand-panel h1 {
+    font-size: 25px !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.02em !important;
+    margin: 8px 0 4px !important;
+  }
+
+  .login-brand-panel > div > p:not(.eyebrow) {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    color: #c4d7e3 !important;
+    max-width: 100% !important;
+  }
+
+  .login-brand-panel .portal-caption {
+    font-size: 11px !important;
+    color: #89adbd !important;
+    margin-top: 4px !important;
+  }
+
+  .login-panel {
+    background: #ffffff !important;
+    padding: 26px 20px !important;
+    display: block !important;
+    place-items: unset !important;
+  }
+
+  .login-box {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .login-box .back-link {
+    margin-bottom: 16px !important;
+    font-size: 13px !important;
+  }
+
+  .login-box h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    margin: 8px 0 20px !important;
+  }
+
+  .login-box input.us-input,
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+    min-height: 48px !important;
+    font-size: 16px !important; /* Prevents auto-zoom in mobile Safari */
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .login-options {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 16px 0 20px !important;
+  }
+
+  #login-submit-btn {
+    min-height: 50px !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
   }
 }
 

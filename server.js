@@ -987,6 +987,129 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // -------------------------------------------------------------
+  // SERVICES CATALOG REST API (Synchronized with Public Page & Booking)
+  // -------------------------------------------------------------
+
+  // GET /api/services
+  if (req.method === 'GET' && pathname === '/api/services') {
+    let services = readJson(SERVICES_FILE);
+    if (!Array.isArray(services) || services.length === 0) {
+      services = initialServices;
+      writeJson(SERVICES_FILE, services);
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+    res.end(JSON.stringify(services));
+    return;
+  }
+
+  // POST /api/services (Create new service)
+  if (req.method === 'POST' && pathname === '/api/services') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        const services = readJson(SERVICES_FILE);
+
+        if (!payload.name) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Service name is required.' }));
+          return;
+        }
+
+        const newId = 'srv-' + (services.length + 1).toString().padStart(2, '0');
+        const codeNum = (services.length + 1).toString().padStart(2, '0');
+        const totalNum = (services.length + 1).toString().padStart(2, '0');
+
+        const newService = {
+          id: newId,
+          code: `${codeNum} / ${totalNum}`,
+          name: payload.name.trim(),
+          category: payload.category || 'General',
+          desc: payload.desc || '',
+          duration: payload.duration || '45 mins',
+          fee: payload.fee || 'Consultation required',
+          price: Number(payload.price) || 0,
+          active: payload.active !== false
+        };
+
+        services.push(newService);
+        writeJson(SERVICES_FILE, services);
+        console.log(`[SERVICE ADDED] New service created: ${newService.name}`);
+
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, service: newService }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // PUT /api/services/:id (Update existing service)
+  if (req.method === 'PUT' && pathname.startsWith('/api/services/')) {
+    const serviceId = pathname.replace('/api/services/', '').trim();
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        const services = readJson(SERVICES_FILE);
+        const idx = services.findIndex(s => s.id === serviceId);
+
+        if (idx === -1) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Service not found.' }));
+          return;
+        }
+
+        if (payload.name) services[idx].name = payload.name.trim();
+        if (payload.category) services[idx].category = payload.category.trim();
+        if (payload.desc !== undefined) services[idx].desc = payload.desc.trim();
+        if (payload.duration) services[idx].duration = payload.duration.trim();
+        if (payload.fee) services[idx].fee = payload.fee.trim();
+        if (payload.price !== undefined) services[idx].price = Number(payload.price);
+        if (payload.active !== undefined) services[idx].active = Boolean(payload.active);
+
+        writeJson(SERVICES_FILE, services);
+        console.log(`[SERVICE UPDATED] Service ${serviceId} (${services[idx].name}) updated`);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, service: services[idx] }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // DELETE /api/services/:id
+  if (req.method === 'DELETE' && pathname.startsWith('/api/services/')) {
+    const serviceId = pathname.replace('/api/services/', '').trim();
+    let services = readJson(SERVICES_FILE);
+    const initialLen = services.length;
+    services = services.filter(s => s.id !== serviceId);
+
+    if (services.length === initialLen) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Service not found.' }));
+      return;
+    }
+
+    writeJson(SERVICES_FILE, services);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true, message: 'Service removed successfully.' }));
+    return;
+  }
+
   // 11. GET /api/config (Safe config retrieval)
   if (req.method === 'GET' && pathname === '/api/config') {
     const config = getClinicConfig();

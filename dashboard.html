@@ -50,7 +50,7 @@
     <!-- MAIN CONTENT AREA -->
     <main class="dashboard-main">
       <header class="dashboard-header">
-        <button class="dashboard-menu" id="dashboard-menu-btn" onclick="toggleMobileSidebar(true)" aria-label="Toggle sidebar">☰</button>
+        <button class="dashboard-menu" id="dashboard-menu-btn" onclick="toggleMobileSidebar()" aria-label="Toggle sidebar">☰</button>
         <div>
           <p class="eyebrow" id="header-date"><span></span> O’Clear Dental Clinic — Staff Portal</p>
           <h1 id="header-title">Good morning, Dr. Claire.</h1>
@@ -360,90 +360,7 @@
                   </tr>
                 </thead>
                 <tbody id="services-catalog-tbody">
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">01 / 07</code></td>
-                    <td><strong>Oral Prophylaxis</strong></td>
-                    <td><span class="patient-badge badge-active">Preventive & Cleaning</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Professional ultrasonic scaling and polishing to thoroughly remove stubborn plaque, calculus (tartar), and external stains.</td>
-                    <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱1,200 - ₱1,800</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-01')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">02 / 07</code></td>
-                    <td><strong>Tooth Filling</strong></td>
-                    <td><span class="patient-badge badge-active">Restorative</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">High-grade aesthetic composite resin fillings matched to natural tooth shade, restoring cavities and chips.</td>
-                    <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱800 - ₱1,500</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-02')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">03 / 07</code></td>
-                    <td><strong>Tooth Extraction</strong></td>
-                    <td><span class="patient-badge badge-active">Oral Surgery</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Gentle and painless tooth removal with modern local anesthesia for damaged teeth, baby teeth, and wisdom teeth.</td>
-                    <td>30 - 45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱1,000 - ₱2,500</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-03')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">04 / 07</code></td>
-                    <td><strong>Root Canal Therapy</strong></td>
-                    <td><span class="patient-badge badge-active">Endodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Advanced endodontic treatment to save infected natural teeth by cleaning and sealing the inner pulp chamber.</td>
-                    <td>60 - 90 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱6,000 - ₱9,000</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-04')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">05 / 07</code></td>
-                    <td><strong>Orthodontic Braces</strong></td>
-                    <td><span class="patient-badge badge-active">Orthodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Precision metal or ceramic brackets and archwires tailored to guide teeth into perfect alignment and bite.</td>
-                    <td>60 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱35,000 - ₱55,000</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-05')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">06 / 07</code></td>
-                    <td><strong>Crowns and Bridges</strong></td>
-                    <td><span class="patient-badge badge-active">Prosthodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Custom-fabricated ceramic and porcelain caps and fixed bridgework to reinforce broken teeth and replace gaps.</td>
-                    <td>60 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱7,000 - ₱14,000</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-06')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">07 / 07</code></td>
-                    <td><strong>Removable Dentures</strong></td>
-                    <td><span class="patient-badge badge-active">Prosthodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Lightweight, durable complete or partial acrylic and flexible dentures to restore chewing, speech, and smile.</td>
-                    <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱5,000 - ₱18,000</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-07')">Edit ✏️</button>
-                    </td>
-                  </tr>
+                  <!-- Injected dynamically via renderServices() -->
                 </tbody>
               </table>
             </div>
@@ -1803,6 +1720,153 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL: ADD NEW DENTAL SERVICE
+         ========================================== -->
+    <div class="modal-overlay" id="modal-service">
+      <div class="modal-card" style="max-width: 580px;">
+        <div class="modal-header">
+          <h3 class="modal-title">+ Add New Service Discipline</h3>
+          <button class="modal-close" onclick="closeModal('modal-service')">×</button>
+        </div>
+        <form id="add-service-form" onsubmit="handleAddNewServiceSubmit(event)">
+          <div class="form-grid" style="margin-bottom: 14px;">
+            <div>
+              <label class="modal-label">Service Name *</label>
+              <input type="text" id="ns-name" class="modal-input" required placeholder="e.g. Laser Teeth Whitening" />
+            </div>
+            <div>
+              <label class="modal-label">Clinical Category *</label>
+              <select id="ns-category" class="modal-select" required>
+                <option value="Preventive & Cleaning">Preventive & Cleaning</option>
+                <option value="Restorative">Restorative</option>
+                <option value="Oral Surgery">Oral Surgery</option>
+                <option value="Endodontics">Endodontics</option>
+                <option value="Orthodontics">Orthodontics</option>
+                <option value="Prosthodontics">Prosthodontics</option>
+                <option value="Cosmetic Dentistry" selected>Cosmetic Dentistry</option>
+                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label class="modal-label">Description (Shown on public website) *</label>
+            <textarea id="ns-desc" class="modal-input" required rows="3" style="resize: vertical; font-family: inherit;" placeholder="Brief clinical description of the treatment..."></textarea>
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 14px;">
+            <div>
+              <label class="modal-label">Public Fee Display *</label>
+              <input type="text" id="ns-fee" class="modal-input" required placeholder="e.g. ₱5,000 - ₱8,000" />
+            </div>
+            <div>
+              <label class="modal-label">Base Numeric Price (PHP) *</label>
+              <input type="number" id="ns-price" class="modal-input" required min="0" placeholder="e.g. 5000" />
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 18px;">
+            <div>
+              <label class="modal-label">Typical Duration</label>
+              <input type="text" id="ns-duration" class="modal-input" placeholder="e.g. 45 - 60 mins" value="45 mins" />
+            </div>
+            <div>
+              <label class="modal-label">Public Visibility</label>
+              <select id="ns-active" class="modal-select">
+                <option value="true" selected>Active (Visible on public site)</option>
+                <option value="false">Hidden (Draft / Inactive)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="add-service-msg" style="display: none; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 14px;"></div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-sm-action" onclick="closeModal('modal-service')">Cancel</button>
+            <button type="submit" class="btn-sm-action primary" id="btn-save-new-service">+ Save Service ✓</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL: EDIT DENTAL SERVICE (LIVE SYNC WITH PUBLIC SITE)
+         ========================================== -->
+    <div class="modal-overlay" id="modal-edit-service">
+      <div class="modal-card" style="max-width: 580px;">
+        <div class="modal-header">
+          <h3 class="modal-title">✏️ Edit Service & Public Details</h3>
+          <button class="modal-close" onclick="closeModal('modal-edit-service')">×</button>
+        </div>
+        <form id="edit-service-form" onsubmit="handleEditServiceSubmit(event)">
+          <input type="hidden" id="es-id" />
+
+          <div class="form-grid" style="margin-bottom: 14px;">
+            <div>
+              <label class="modal-label">Service Discipline Name *</label>
+              <input type="text" id="es-name" class="modal-input" required />
+            </div>
+            <div>
+              <label class="modal-label">Clinical Category *</label>
+              <select id="es-category" class="modal-select" required>
+                <option value="Preventive & Cleaning">Preventive & Cleaning</option>
+                <option value="Restorative">Restorative</option>
+                <option value="Oral Surgery">Oral Surgery</option>
+                <option value="Endodontics">Endodontics</option>
+                <option value="Orthodontics">Orthodontics</option>
+                <option value="Prosthodontics">Prosthodontics</option>
+                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label class="modal-label">Description (Shown on public homepage cards) *</label>
+            <textarea id="es-desc" class="modal-input" required rows="3" style="resize: vertical; font-family: inherit;"></textarea>
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 14px;">
+            <div>
+              <label class="modal-label">Public Fee Display * (e.g. ₱1,200 - ₱1,800)</label>
+              <input type="text" id="es-fee" class="modal-input" required />
+            </div>
+            <div>
+              <label class="modal-label">Base Numeric Price (PHP) *</label>
+              <input type="number" id="es-price" class="modal-input" required min="0" />
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-bottom: 18px;">
+            <div>
+              <label class="modal-label">Typical Duration</label>
+              <input type="text" id="es-duration" class="modal-input" placeholder="e.g. 45 mins" />
+            </div>
+            <div>
+              <label class="modal-label">Public Visibility</label>
+              <select id="es-active" class="modal-select">
+                <option value="true">Active (Visible on public site & booking)</option>
+                <option value="false">Hidden (Inactive)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="edit-service-msg" style="display: none; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 14px;"></div>
+
+          <div class="modal-actions" style="justify-content: space-between;">
+            <button type="button" class="btn-sm-action danger" onclick="deleteCurrentService()" id="btn-delete-service">Delete Service</button>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-sm-action" onclick="closeModal('modal-edit-service')">Cancel</button>
+              <button type="submit" class="btn-sm-action primary" id="btn-save-edit-service">Save & Update Public Page ✓</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- ==========================================
          MODAL: ADD NEW CLINIC STAFF USER ACCOUNT
          ========================================== -->
@@ -1861,13 +1925,33 @@
 
     <!-- JAVASCRIPT: DASHBOARD LOGIC, NOTIFICATIONS & REST SYNC -->
     <script>
-      // 1. Mobile Menu Toggle
-      const menuBtn = document.querySelector(".dashboard-menu");
-      if (menuBtn) {
-        menuBtn.addEventListener("click", () => {
-          document.querySelector(".dashboard-sidebar").classList.toggle("open");
+      // 1. Mobile Sidebar Drawer Controller
+      window.toggleMobileSidebar = function(force) {
+        const sidebar = document.getElementById('dashboard-sidebar') || document.querySelector('.dashboard-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        if (!sidebar) return;
+        const shouldOpen = (typeof force === 'boolean') ? force : !sidebar.classList.contains('open');
+        if (shouldOpen) {
+          sidebar.classList.add('open');
+          if (backdrop) backdrop.classList.add('active');
+          document.body.classList.add('sidebar-locked');
+        } else {
+          sidebar.classList.remove('open');
+          if (backdrop) backdrop.classList.remove('active');
+          document.body.classList.remove('sidebar-locked');
+        }
+      };
+
+      // Auto-close mobile drawer when navigation links are clicked
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.dashboard-nav a').forEach(item => {
+          item.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) {
+              window.toggleMobileSidebar(false);
+            }
+          });
         });
-      }
+      });
 
       // 2. Tab Navigation Switcher
       function switchTab(tabName) {
@@ -1935,14 +2019,13 @@
 
       // 4. Data State with LocalStorage Fallback
       const fallbackServices = [
-        { id: "srv-01", code: "01 / 08", name: "Orthodontics & Tooth Alignment", category: "Orthodontics", price: 35000, fee: "₱35,000", desc: "Personalized orthodontic alignment and brackets tailored to straighten crowded or misaligned teeth.", duration: "60 mins", active: true },
-        { id: "srv-02", code: "02 / 08", name: "Clear Aligners", category: "Orthodontics", price: 65000, fee: "₱65,000", desc: "Discreet, transparent trays custom-planned using digital smile scanning to gently straighten teeth.", duration: "45 mins", active: true },
-        { id: "srv-03", code: "03 / 08", name: "General Dentistry & Cleaning", category: "General", price: 2000, fee: "₱2,000", desc: "Essential ultrasonic oral prophylaxis, cavity fillings, and preventive maintenance.", duration: "45 mins", active: true },
-        { id: "srv-04", code: "04 / 08", name: "In-Chair Teeth Whitening", category: "Aesthetic", price: 8000, fee: "₱8,000", desc: "Safe, enamel-gentle medical teeth whitening designed to lift stubborn stains and brighten your smile.", duration: "60 mins", active: true },
-        { id: "srv-05", code: "05 / 08", name: "Porcelain Veneers & Makeovers", category: "Aesthetic", price: 15000, fee: "₱15,000", desc: "Ultrathin ceramic facings handcrafted to correct discoloration, gaps, and chips.", duration: "90 mins", active: true },
-        { id: "srv-06", code: "06 / 08", name: "Restorations & Tooth Preservation", category: "General", price: 2500, fee: "₱2,500", desc: "Gentle root canal therapy, tooth restorations, and dental crowns engineered to relieve pain.", duration: "60 mins", active: true },
-        { id: "srv-07", code: "07 / 08", name: "Tooth Extraction & Minor Surgery", category: "Surgical", price: 3000, fee: "₱3,000", desc: "Safe and painless surgical extraction, wisdom tooth management, and suture care.", duration: "45 mins", active: true },
-        { id: "srv-08", code: "08 / 08", name: "General Dental Consultation", category: "General", price: 500, fee: "₱500", desc: "Comprehensive oral examination, digital bite assessment, and personalized treatment consultation.", duration: "30 mins", active: true }
+        { id: "srv-01", code: "01 / 07", name: "Oral Prophylaxis", category: "Preventive & Cleaning", price: 1500, fee: "₱1,200 - ₱1,800", desc: "Professional ultrasonic scaling and polishing to thoroughly remove stubborn plaque, calculus (tartar), and external tea/coffee stains, keeping gums healthy and breath fresh.", duration: "45 mins", active: true },
+        { id: "srv-02", code: "02 / 07", name: "Tooth Filling", category: "Restorative", price: 1200, fee: "₱800 - ₱1,500 / surface", desc: "High-grade aesthetic composite resin fillings matched to your natural tooth shade, restoring cavities, chipped surfaces, and minor decay with invisible strength.", duration: "45 mins", active: true },
+        { id: "srv-03", code: "03 / 07", name: "Tooth Extraction", category: "Oral Surgery", price: 1500, fee: "₱1,000 - ₱2,500", desc: "Gentle and painless tooth removal with modern local anesthesia, catering to severely damaged teeth, baby teeth, and problematic wisdom teeth with fast recovery care.", duration: "30 - 45 mins", active: true },
+        { id: "srv-04", code: "04 / 07", name: "Root Canal Therapy", category: "Endodontics", price: 7000, fee: "₱6,000 - ₱9,000 / canal", desc: "Advanced endodontic treatment designed to save infected or deeply decayed natural teeth by cleaning and sealing the inner pulp chamber, completely relieving toothache.", duration: "60 - 90 mins", active: true },
+        { id: "srv-05", code: "05 / 07", name: "Orthodontic Braces", category: "Orthodontics", price: 35000, fee: "₱35,000 - ₱55,000 (Flexible terms)", desc: "Precision metal or ceramic brackets and archwires tailored to guide teeth into perfect alignment, correct bite problems (overbite, underbite), and craft a harmonious smile.", duration: "60 mins", active: true },
+        { id: "srv-06", code: "06 / 07", name: "Crowns and Bridges", category: "Prosthodontics", price: 9000, fee: "₱7,000 - ₱14,000 / unit", desc: "Custom-fabricated ceramic and porcelain caps and fixed bridgework designed to reinforce broken or root-treated teeth and seamlessly replace missing teeth.", duration: "60 mins", active: true },
+        { id: "srv-07", code: "07 / 07", name: "Removable Dentures", category: "Prosthodontics", price: 8000, fee: "₱5,000 - ₱18,000", desc: "Lightweight, durable complete or partial acrylic and flexible dentures expertly contoured to restore chewing function, speech clarity, and a natural, youthful facial profile.", duration: "45 mins", active: true }
       ];
 
       let appointmentsData = [];
@@ -2195,6 +2278,229 @@
           renderAppointments();
         });
       });
+
+      // 7b. Services Catalog Management & Live Sync with Public Page
+      function renderServices() {
+        const tbody = document.getElementById("services-catalog-tbody");
+        if (!tbody) return;
+        if (!servicesData || servicesData.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 26px; color: #8896a6;">No service records found.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = servicesData.map((srv, index) => {
+          const code = srv.code || `${(index + 1).toString().padStart(2, '0')} / ${servicesData.length.toString().padStart(2, '0')}`;
+          const priceDisplay = srv.fee || (srv.price ? `₱${Number(srv.price).toLocaleString()}` : '₱0');
+          const isActive = srv.active !== false;
+
+          return `
+            <tr>
+              <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">${code}</code></td>
+              <td><strong>${escapeHtml(srv.name)}</strong></td>
+              <td><span class="patient-badge badge-active">${escapeHtml(srv.category || 'General')}</span></td>
+              <td style="max-width: 280px; font-size: 12px; color: #5e6d82; line-height: 1.45;">${escapeHtml(srv.desc || '—')}</td>
+              <td>${escapeHtml(srv.duration || '45 mins')}</td>
+              <td><strong style="color: var(--navy); font-size: 13.5px;">${escapeHtml(priceDisplay)}</strong></td>
+              <td>
+                <span class="patient-badge ${isActive ? 'badge-in-treatment' : 'badge-inactive'}">
+                  ${isActive ? 'Active' : 'Hidden'}
+                </span>
+              </td>
+              <td>
+                <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('${srv.id}')">
+                  Edit ✏️
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      function openEditServiceModal(serviceId) {
+        const srv = servicesData.find(s => s.id === serviceId);
+        if (!srv) {
+          alert('Service not found.');
+          return;
+        }
+
+        document.getElementById('es-id').value = srv.id;
+        document.getElementById('es-name').value = srv.name || '';
+        document.getElementById('es-category').value = srv.category || 'Preventive & Cleaning';
+        document.getElementById('es-desc').value = srv.desc || '';
+        document.getElementById('es-fee').value = srv.fee || (srv.price ? `₱${Number(srv.price).toLocaleString()}` : '');
+        document.getElementById('es-price').value = srv.price || 0;
+        document.getElementById('es-duration').value = srv.duration || '45 mins';
+        document.getElementById('es-active').value = (srv.active !== false) ? 'true' : 'false';
+
+        const msgEl = document.getElementById('edit-service-msg');
+        if (msgEl) msgEl.style.display = 'none';
+
+        openModal('modal-edit-service');
+      }
+
+      async function handleEditServiceSubmit(e) {
+        e.preventDefault();
+        const id = document.getElementById('es-id').value;
+        const name = document.getElementById('es-name').value.trim();
+        const category = document.getElementById('es-category').value;
+        const desc = document.getElementById('es-desc').value.trim();
+        const fee = document.getElementById('es-fee').value.trim();
+        const price = Number(document.getElementById('es-price').value) || 0;
+        const duration = document.getElementById('es-duration').value.trim();
+        const active = document.getElementById('es-active').value === 'true';
+
+        const submitBtn = document.getElementById('btn-save-edit-service');
+        const msgEl = document.getElementById('edit-service-msg');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Saving changes...';
+        }
+
+        const payload = { name, category, desc, fee, price, duration, active };
+
+        try {
+          const res = await fetch(`${API_BASE}/api/services/${encodeURIComponent(id)}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (res.ok && data.success) {
+            const idx = servicesData.findIndex(s => s.id === id);
+            if (idx !== -1) {
+              servicesData[idx] = { ...servicesData[idx], ...payload };
+            }
+            localStorage.setItem('oclear_services', JSON.stringify(servicesData));
+            renderServices();
+            populateInvoiceProcedures();
+
+            if (msgEl) {
+              msgEl.style.display = 'block';
+              msgEl.style.background = '#edf7ed';
+              msgEl.style.color = '#1e4620';
+              msgEl.style.border = '1px solid #c8e6c9';
+              msgEl.textContent = '✓ Service updated! Changes are now live in the catalog and on the public website.';
+            }
+
+            setTimeout(() => {
+              closeModal('modal-edit-service');
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Save & Update Public Page ✓';
+              }
+            }, 800);
+            return;
+          } else {
+            throw new Error(data.error || 'Server error');
+          }
+        } catch (err) {
+          const idx = servicesData.findIndex(s => s.id === id);
+          if (idx !== -1) {
+            servicesData[idx] = { ...servicesData[idx], ...payload };
+          }
+          localStorage.setItem('oclear_services', JSON.stringify(servicesData));
+          renderServices();
+          populateInvoiceProcedures();
+
+          if (msgEl) {
+            msgEl.style.display = 'block';
+            msgEl.style.background = '#edf7ed';
+            msgEl.style.color = '#1e4620';
+            msgEl.style.border = '1px solid #c8e6c9';
+            msgEl.textContent = '✓ Service saved locally and queued for live sync.';
+          }
+
+          setTimeout(() => {
+            closeModal('modal-edit-service');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Save & Update Public Page ✓';
+            }
+          }, 800);
+        }
+      }
+
+      async function handleAddNewServiceSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('ns-name').value.trim();
+        const category = document.getElementById('ns-category').value;
+        const desc = document.getElementById('ns-desc').value.trim();
+        const fee = document.getElementById('ns-fee').value.trim();
+        const price = Number(document.getElementById('ns-price').value) || 0;
+        const duration = document.getElementById('ns-duration').value.trim();
+        const active = document.getElementById('ns-active').value === 'true';
+
+        const submitBtn = document.getElementById('btn-save-new-service');
+        const msgEl = document.getElementById('add-service-msg');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Saving service...';
+        }
+
+        const payload = { name, category, desc, fee, price, duration, active };
+
+        try {
+          const res = await fetch(`${API_BASE}/api/services`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (res.ok && data.success && data.service) {
+            servicesData.push(data.service);
+          } else {
+            const newId = 'srv-' + (servicesData.length + 1).toString().padStart(2, '0');
+            servicesData.push({ id: newId, code: `${(servicesData.length + 1).toString().padStart(2, '0')} / ${(servicesData.length + 1).toString().padStart(2, '0')}`, ...payload });
+          }
+        } catch (err) {
+          const newId = 'srv-' + (servicesData.length + 1).toString().padStart(2, '0');
+          servicesData.push({ id: newId, code: `${(servicesData.length + 1).toString().padStart(2, '0')} / ${(servicesData.length + 1).toString().padStart(2, '0')}`, ...payload });
+        }
+
+        localStorage.setItem('oclear_services', JSON.stringify(servicesData));
+        renderServices();
+        populateInvoiceProcedures();
+
+        if (msgEl) {
+          msgEl.style.display = 'block';
+          msgEl.style.background = '#edf7ed';
+          msgEl.style.color = '#1e4620';
+          msgEl.style.border = '1px solid #c8e6c9';
+          msgEl.textContent = '✓ Bagong service idinagdag at naka-sync na sa booking form!';
+        }
+
+        setTimeout(() => {
+          closeModal('modal-service');
+          document.getElementById('add-service-form').reset();
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '+ Save Service ✓';
+          }
+        }, 800);
+      }
+
+      async function deleteCurrentService() {
+        const id = document.getElementById('es-id').value;
+        const srv = servicesData.find(s => s.id === id);
+        if (!srv) return;
+
+        if (!confirm(`Are you sure you want to remove "${srv.name}" from the active services catalog?`)) {
+          return;
+        }
+
+        try {
+          await fetch(`${API_BASE}/api/services/${encodeURIComponent(id)}`, { method: 'DELETE' });
+        } catch (e) {
+          console.warn('Offline deletion');
+        }
+
+        servicesData = servicesData.filter(s => s.id !== id);
+        localStorage.setItem('oclear_services', JSON.stringify(servicesData));
+        renderServices();
+        populateInvoiceProcedures();
+        closeModal('modal-edit-service');
+        alert(`✓ "${srv.name}" has been removed from the service catalog.`);
+      }
 
       // 8. Service-Price-Based Markup Calculator Logic (Arunafeltz Formula: BASE / (100% - MARKUP%))
       function populateInvoiceProcedures() {
@@ -4085,35 +4391,6 @@
         }
       }
 
-      // Mobile sidebar drawer controller
-      window.toggleMobileSidebar = function(open) {
-        const sidebar = document.getElementById('dashboard-sidebar') || document.querySelector('.dashboard-sidebar');
-        const backdrop = document.getElementById('sidebar-backdrop');
-        if (!sidebar) return;
-        if (open === undefined) {
-          sidebar.classList.toggle('open');
-        } else if (open) {
-          sidebar.classList.add('open');
-        } else {
-          sidebar.classList.remove('open');
-        }
-        if (backdrop) {
-          if (sidebar.classList.contains('open')) {
-            backdrop.classList.add('active');
-          } else {
-            backdrop.classList.remove('active');
-          }
-        }
-      };
-
-      // Close mobile drawer when selecting navigation tab
-      document.querySelectorAll('.dashboard-nav .nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            window.toggleMobileSidebar(false);
-          }
-        });
-      });
 
       // ==========================================
       // USER AUTHENTICATION & ARUNAFELTZ PASSWORD LOGIC
