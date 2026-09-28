@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#08094b" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
   <meta name="description" content="O'Clear Dental Clinic — General Dentistry and Practicing Orthodontics by Dr. Claire Ann T. Cordova. Your smile, made clear." />
   <title>O’Clear Dental Clinic | Your smile, made clear.</title>
+  <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -203,139 +210,122 @@
         </div>
 
         <div class="us-services__grid" id="public-services-grid">
-          <!-- Service 01 -->
+          <!-- Service 01: Oral Prophylaxis -->
           <article class="us-service-card">
             <div>
               <div class="us-service-card__top">
-                <span class="us-service-card__num">01 / 08</span>
-                <span class="us-service-card__icon">⌁</span>
-              </div>
-              <h3 class="us-service-card__title">Orthodontics & Tooth Alignment</h3>
-              <p class="us-service-card__desc">
-                Personalized orthodontic alignment and brackets tailored to straighten crowded or misaligned teeth for a balanced, harmonious bite.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="Orthodontics & Tooth Alignment" class="us-service-card__link">Plan Orthodontics <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 02 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">02 / 08</span>
-                <span class="us-service-card__icon">✦</span>
-              </div>
-              <h3 class="us-service-card__title">Clear Aligners</h3>
-              <p class="us-service-card__desc">
-                Discreet, transparent trays custom-planned using digital smile scanning to gently straighten teeth without traditional metal wires.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="Clear Aligners" class="us-service-card__link">Consult Aligners <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 03 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">03 / 08</span>
+                <span class="us-service-card__num">01 / 07</span>
                 <span class="us-service-card__icon">♧</span>
               </div>
-              <h3 class="us-service-card__title">General Dentistry & Cleaning</h3>
+              <h3 class="us-service-card__title">Oral Prophylaxis</h3>
               <p class="us-service-card__desc">
-                Essential ultrasonic oral prophylaxis, cavity fillings, and preventive maintenance ensuring strong teeth and healthy gums.
+                Professional ultrasonic scaling and polishing to thoroughly remove stubborn plaque, calculus (tartar), and external tea/coffee stains, keeping gums healthy and breath fresh.
               </p>
             </div>
             <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="General Dentistry & Cleaning" class="us-service-card__link">Schedule Cleaning <span>→</span></a>
+              <a href="#appointment" data-procedure="Oral Prophylaxis" class="us-service-card__link">Schedule Cleaning <span>→</span></a>
             </div>
           </article>
 
-          <!-- Service 04 -->
+          <!-- Service 02: Tooth Filling -->
           <article class="us-service-card">
             <div>
               <div class="us-service-card__top">
-                <span class="us-service-card__num">04 / 08</span>
-                <span class="us-service-card__icon">◌</span>
-              </div>
-              <h3 class="us-service-card__title">In-Chair Teeth Whitening</h3>
-              <p class="us-service-card__desc">
-                Safe, enamel-gentle medical teeth whitening designed to lift stubborn stains and brighten your smile with minimal sensitivity.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="In-Chair Teeth Whitening" class="us-service-card__link">Book Whitening <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 05 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">05 / 08</span>
-                <span class="us-service-card__icon">▱</span>
-              </div>
-              <h3 class="us-service-card__title">Porcelain Veneers & Makeovers</h3>
-              <p class="us-service-card__desc">
-                Ultrathin ceramic facings handcrafted to correct discoloration, gaps, and chips with natural optical translucency.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="Porcelain Veneers & Makeovers" class="us-service-card__link">Consult Veneers <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 06 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">06 / 08</span>
-                <span class="us-service-card__icon">⚙</span>
-              </div>
-              <h3 class="us-service-card__title">Restorations & Tooth Preservation</h3>
-              <p class="us-service-card__desc">
-                Gentle root canal therapy, tooth restorations, and dental crowns engineered to relieve pain and protect natural tooth structure.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="Restorations & Tooth Preservation" class="us-service-card__link">Book Restorations <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 07 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">07 / 08</span>
-                <span class="us-service-card__icon">⚕</span>
-              </div>
-              <h3 class="us-service-card__title">Tooth Extraction & Minor Surgery</h3>
-              <p class="us-service-card__desc">
-                Safe and painless surgical extraction, wisdom tooth management, and suture care for comfort and quick recovery.
-              </p>
-            </div>
-            <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="Tooth Extraction & Minor Surgery" class="us-service-card__link">Plan Surgery <span>→</span></a>
-            </div>
-          </article>
-
-          <!-- Service 08 -->
-          <article class="us-service-card">
-            <div>
-              <div class="us-service-card__top">
-                <span class="us-service-card__num">08 / 08</span>
+                <span class="us-service-card__num">02 / 07</span>
                 <span class="us-service-card__icon">✦</span>
               </div>
-              <h3 class="us-service-card__title">General Dental Consultation</h3>
+              <h3 class="us-service-card__title">Tooth Filling</h3>
               <p class="us-service-card__desc">
-                Comprehensive oral examination, digital bite assessment, and personalized treatment consultation with Dr. Claire.
+                High-grade aesthetic composite resin fillings matched to your natural tooth shade, restoring cavities, chipped surfaces, and minor decay with invisible strength.
               </p>
             </div>
             <div class="us-service-card__footer">
-              <a href="#appointment" data-procedure="General Dental Consultation" class="us-service-card__link">Book Consultation <span>→</span></a>
+              <a href="#appointment" data-procedure="Tooth Filling" class="us-service-card__link">Book Filling <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 03: Tooth Extraction -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">03 / 07</span>
+                <span class="us-service-card__icon">⚕</span>
+              </div>
+              <h3 class="us-service-card__title">Tooth Extraction</h3>
+              <p class="us-service-card__desc">
+                Gentle and painless tooth removal with modern local anesthesia, catering to severely damaged teeth, baby teeth, and problematic wisdom teeth with fast recovery care.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Tooth Extraction" class="us-service-card__link">Plan Extraction <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 04: Root Canal Therapy -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">04 / 07</span>
+                <span class="us-service-card__icon">⚙</span>
+              </div>
+              <h3 class="us-service-card__title">Root Canal Therapy</h3>
+              <p class="us-service-card__desc">
+                Advanced endodontic treatment designed to save infected or deeply decayed natural teeth by cleaning and sealing the inner pulp chamber, completely relieving toothache.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Root Canal Therapy" class="us-service-card__link">Relieve Toothache <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 05: Orthodontic Braces -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">05 / 07</span>
+                <span class="us-service-card__icon">⌁</span>
+              </div>
+              <h3 class="us-service-card__title">Orthodontic Braces</h3>
+              <p class="us-service-card__desc">
+                Precision metal or ceramic brackets and archwires tailored to guide teeth into perfect alignment, correct bite problems (overbite, underbite), and craft a harmonious smile.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Orthodontic Braces" class="us-service-card__link">Consult Braces <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 06: Crowns and Bridges -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">06 / 07</span>
+                <span class="us-service-card__icon">▱</span>
+              </div>
+              <h3 class="us-service-card__title">Crowns and Bridges</h3>
+              <p class="us-service-card__desc">
+                Custom-fabricated ceramic and porcelain caps and fixed bridgework designed to reinforce broken or root-treated teeth and seamlessly replace missing teeth.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Crowns and Bridges" class="us-service-card__link">Restore Teeth <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Service 07: Removable Dentures -->
+          <article class="us-service-card">
+            <div>
+              <div class="us-service-card__top">
+                <span class="us-service-card__num">07 / 07</span>
+                <span class="us-service-card__icon">◌</span>
+              </div>
+              <h3 class="us-service-card__title">Removable Dentures</h3>
+              <p class="us-service-card__desc">
+                Lightweight, durable complete or partial acrylic and flexible dentures expertly contoured to restore chewing function, speech clarity, and a natural, youthful facial profile.
+              </p>
+            </div>
+            <div class="us-service-card__footer">
+              <a href="#appointment" data-procedure="Removable Dentures" class="us-service-card__link">Fit Dentures <span>→</span></a>
             </div>
           </article>
         </div>
@@ -669,14 +659,13 @@
               </label>
               <select id="req-procedure" name="procedure" class="us-select" required>
                 <option value="" disabled selected>Select procedure</option>
-                <option value="General Dental Consultation">General Dental Consultation</option>
-                <option value="General Dentistry & Cleaning">General Dentistry & Cleaning</option>
-                <option value="Orthodontics & Tooth Alignment">Orthodontics & Tooth Alignment</option>
-                <option value="Clear Aligners">Clear Aligners</option>
-                <option value="In-Chair Teeth Whitening">In-Chair Teeth Whitening</option>
-                <option value="Porcelain Veneers & Makeovers">Porcelain Veneers & Makeovers</option>
-                <option value="Restorations & Tooth Preservation">Restorations & Tooth Preservation</option>
-                <option value="Tooth Extraction & Minor Surgery">Tooth Extraction & Minor Surgery</option>
+                <option value="Oral Prophylaxis">Oral Prophylaxis (Cleaning & Tartar Removal)</option>
+                <option value="Tooth Filling">Tooth Filling (Pasta / Composite Restoration)</option>
+                <option value="Tooth Extraction">Tooth Extraction (Bunot)</option>
+                <option value="Root Canal Therapy">Root Canal Therapy</option>
+                <option value="Orthodontic Braces">Orthodontic Braces</option>
+                <option value="Crowns and Bridges">Crowns and Bridges</option>
+                <option value="Removable Dentures">Removable Dentures (Pustiso)</option>
               </select>
             </div>
 

@@ -2,21 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#08094b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
     <title>Staff Portal, Patient Catalog & Billing | O'Clear Dental Clinic</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script src="api-config.js"></script>
   </head>
   <body class="dashboard-page">
+    <!-- MOBILE SIDEBAR BACKDROP OVERLAY -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleMobileSidebar(false)"></div>
+
     <!-- SIDEBAR NAVIGATION -->
-    <aside class="dashboard-sidebar">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="O'Clear Logo" style="width: 28px; height: 28px; border-radius: 50%; object-fit: contain;" />
-        <span><strong>O’CLEAR</strong><small>DENTAL CLINIC</small></span>
-      </a>
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <a class="brand" href="index.html" style="margin-bottom: 0;">
+          <img src="images/logo.png" alt="O'Clear Logo" style="width: 28px; height: 28px; border-radius: 50%; object-fit: contain;" />
+          <span><strong>O’CLEAR</strong><small>DENTAL CLINIC</small></span>
+        </a>
+        <button onclick="toggleMobileSidebar(false)" style="background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; padding: 4px 8px; display: inline-block;" class="sidebar-close-btn" aria-label="Close sidebar">✕</button>
+      </div>
       <p class="sidebar-label">Workspace</p>
       <nav class="dashboard-nav">
         <a class="nav-item selected" href="#" data-tab="overview"><span>⌂</span>Overview</a>
@@ -36,7 +49,7 @@
     <!-- MAIN CONTENT AREA -->
     <main class="dashboard-main">
       <header class="dashboard-header">
-        <button class="dashboard-menu" aria-label="Toggle sidebar">☰</button>
+        <button class="dashboard-menu" id="dashboard-menu-btn" onclick="toggleMobileSidebar(true)" aria-label="Toggle sidebar">☰</button>
         <div>
           <p class="eyebrow" id="header-date"><span></span> O’Clear Dental Clinic — Staff Portal</p>
           <h1 id="header-title">Good morning, Dr. Claire.</h1>
@@ -342,99 +355,87 @@
                 </thead>
                 <tbody id="services-catalog-tbody">
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">01 / 08</code></td>
-                    <td><strong>Orthodontics & Tooth Alignment</strong></td>
-                    <td><span class="patient-badge badge-active">Orthodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Personalized orthodontic alignment and brackets tailored to straighten crowded or misaligned teeth.</td>
-                    <td>60 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱35,000</strong></td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">01 / 07</code></td>
+                    <td><strong>Oral Prophylaxis</strong></td>
+                    <td><span class="patient-badge badge-active">Preventive & Cleaning</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Professional ultrasonic scaling and polishing to thoroughly remove stubborn plaque, calculus (tartar), and external stains.</td>
+                    <td>45 mins</td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱1,200 - ₱1,800</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-01')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">02 / 08</code></td>
-                    <td><strong>Clear Aligners</strong></td>
-                    <td><span class="patient-badge badge-active">Orthodontics</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Discreet, transparent trays custom-planned using digital smile scanning to gently straighten teeth.</td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">02 / 07</code></td>
+                    <td><strong>Tooth Filling</strong></td>
+                    <td><span class="patient-badge badge-active">Restorative</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">High-grade aesthetic composite resin fillings matched to natural tooth shade, restoring cavities and chips.</td>
                     <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱65,000</strong></td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱800 - ₱1,500</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-02')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">03 / 08</code></td>
-                    <td><strong>General Dentistry & Cleaning</strong></td>
-                    <td><span class="patient-badge badge-active">General</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Essential ultrasonic oral prophylaxis, cavity fillings, and preventive maintenance.</td>
-                    <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱2,000</strong></td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">03 / 07</code></td>
+                    <td><strong>Tooth Extraction</strong></td>
+                    <td><span class="patient-badge badge-active">Oral Surgery</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Gentle and painless tooth removal with modern local anesthesia for damaged teeth, baby teeth, and wisdom teeth.</td>
+                    <td>30 - 45 mins</td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱1,000 - ₱2,500</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-03')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">04 / 08</code></td>
-                    <td><strong>In-Chair Teeth Whitening</strong></td>
-                    <td><span class="patient-badge badge-active">Aesthetic</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Safe, enamel-gentle medical teeth whitening designed to brighten your smile.</td>
-                    <td>60 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱8,000</strong></td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">04 / 07</code></td>
+                    <td><strong>Root Canal Therapy</strong></td>
+                    <td><span class="patient-badge badge-active">Endodontics</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Advanced endodontic treatment to save infected natural teeth by cleaning and sealing the inner pulp chamber.</td>
+                    <td>60 - 90 mins</td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱6,000 - ₱9,000</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-04')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">05 / 08</code></td>
-                    <td><strong>Porcelain Veneers & Makeovers</strong></td>
-                    <td><span class="patient-badge badge-active">Aesthetic</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Ultrathin ceramic facings handcrafted to correct discoloration, gaps, and chips.</td>
-                    <td>90 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱15,000</strong></td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">05 / 07</code></td>
+                    <td><strong>Orthodontic Braces</strong></td>
+                    <td><span class="patient-badge badge-active">Orthodontics</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Precision metal or ceramic brackets and archwires tailored to guide teeth into perfect alignment and bite.</td>
+                    <td>60 mins</td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱35,000 - ₱55,000</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-05')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">06 / 08</code></td>
-                    <td><strong>Restorations & Tooth Preservation</strong></td>
-                    <td><span class="patient-badge badge-active">General</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Gentle root canal therapy, tooth restorations, and dental crowns engineered to relieve pain.</td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">06 / 07</code></td>
+                    <td><strong>Crowns and Bridges</strong></td>
+                    <td><span class="patient-badge badge-active">Prosthodontics</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Custom-fabricated ceramic and porcelain caps and fixed bridgework to reinforce broken teeth and replace gaps.</td>
                     <td>60 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱2,500</strong></td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱7,000 - ₱14,000</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-06')">Edit ✏️</button>
                     </td>
                   </tr>
                   <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">07 / 08</code></td>
-                    <td><strong>Tooth Extraction & Minor Surgery</strong></td>
-                    <td><span class="patient-badge badge-active">Surgical</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Safe and painless surgical extraction, wisdom tooth management, and suture care.</td>
+                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">07 / 07</code></td>
+                    <td><strong>Removable Dentures</strong></td>
+                    <td><span class="patient-badge badge-active">Prosthodontics</span></td>
+                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Lightweight, durable complete or partial acrylic and flexible dentures to restore chewing, speech, and smile.</td>
                     <td>45 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱3,000</strong></td>
+                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱5,000 - ₱18,000</strong></td>
                     <td><span class="patient-badge badge-in-treatment">Active</span></td>
                     <td>
                       <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-07')">Edit ✏️</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><code style="font-size: 11px; font-weight: 700; color: var(--navy);">08 / 08</code></td>
-                    <td><strong>General Dental Consultation</strong></td>
-                    <td><span class="patient-badge badge-active">General</span></td>
-                    <td style="max-width: 280px; font-size: 12px; color: #5e6d82;">Comprehensive oral examination, digital bite assessment, and personalized treatment consultation.</td>
-                    <td>30 mins</td>
-                    <td><strong style="color: var(--navy); font-size: 13.5px;">₱500</strong></td>
-                    <td><span class="patient-badge badge-in-treatment">Active</span></td>
-                    <td>
-                      <button class="btn-sm-action primary" style="font-size: 11px; padding: 5px 10px; white-space: nowrap;" onclick="openEditServiceModal('srv-08')">Edit ✏️</button>
                     </td>
                   </tr>
                 </tbody>
@@ -3901,6 +3902,36 @@
           }
         }
       }
+
+      // Mobile sidebar drawer controller
+      window.toggleMobileSidebar = function(open) {
+        const sidebar = document.getElementById('dashboard-sidebar') || document.querySelector('.dashboard-sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        if (!sidebar) return;
+        if (open === undefined) {
+          sidebar.classList.toggle('open');
+        } else if (open) {
+          sidebar.classList.add('open');
+        } else {
+          sidebar.classList.remove('open');
+        }
+        if (backdrop) {
+          if (sidebar.classList.contains('open')) {
+            backdrop.classList.add('active');
+          } else {
+            backdrop.classList.remove('active');
+          }
+        }
+      };
+
+      // Close mobile drawer when selecting navigation tab
+      document.querySelectorAll('.dashboard-nav .nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            window.toggleMobileSidebar(false);
+          }
+        });
+      });
 
       // Initial Load
       initBackendSettingInput();
